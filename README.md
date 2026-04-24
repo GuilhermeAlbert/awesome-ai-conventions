@@ -9,10 +9,24 @@ This is a living registry of patterns the industry is converging on. Not framewo
 ## Contents
 
 - [Project-level context files](#project-level-context-files)
+  - [AGENTS.md](#agentsmd)
+  - [CLAUDE.md](#claudemd)
+  - [MEMORY.md](#memorymd)
+  - [.cursor/rules/, .clinerules, and .github/copilot-instructions.md](#cursorrules-clinerules-and-githubcopilot-instructionsmd)
+  - [.aiignore](#aiignore)
+  - [Memory Bank (`cline_docs/` or `.roo/`)](#memory-bank-cline_docs-or-roo)
+- [Prompt asset files](#prompt-asset-files)
+  - [.prompty](#prompty)
+  - [.prompt and system_prompt.txt](#prompt-and-system_prompttxt)
 - [Agent skill files](#agent-skill-files)
+  - [SKILL.md](#skillmd)
 - [Design and UI conventions](#design-and-ui-conventions)
+  - [DESIGN.md](#designmd)
 - [Web and LLM discoverability](#web-and-llm-discoverability)
+  - [llms.txt](#llmstxt)
 - [Protocols](#protocols)
+  - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
+  - [Agent Cards](#agent-cards)
 - [Contributing](#contributing)
 
 ---
@@ -46,9 +60,9 @@ Claude Code's auto-memory file. Written by the agent, not the human. When Claude
 
 - Guide: [Medium — AI Agent Memory Files](https://medium.com/data-science-collective/the-complete-guide-to-ai-agent-memory-files-claudemd-agentsmd-and-beyond-49ea0df5c5a9)
 
-### .cursor/rules/ and .github/copilot-instructions.md
+### .cursor/rules/, .clinerules, and .github/copilot-instructions.md
 
-Tool-specific equivalents. Cursor uses YAML-frontmatter scoped rules by glob pattern. GitHub Copilot uses `.github/copilot-instructions.md` for repo-wide defaults and path-specific `.instructions.md` files. For teams using multiple tools, the symlink pattern prevents content from drifting apart across files.
+Tool-specific equivalents. Cursor uses YAML-frontmatter scoped rules by glob pattern. GitHub Copilot uses `.github/copilot-instructions.md` for repo-wide defaults and path-specific `.instructions.md` files. Open-source agents like Cline and Roo Code use `.clinerules` or `.roorules` in the project root to ingest behavior on initialization. For teams using multiple tools, the symlink pattern prevents content from drifting apart across files.
 
 - Docs (Cursor): [cursor.com/docs](https://cursor.com/docs)
 - Docs (Copilot): [docs.github.com/copilot](https://docs.github.com/copilot)
@@ -58,6 +72,30 @@ Tool-specific equivalents. Cursor uses YAML-frontmatter scoped rules by glob pat
 Tells AI agents which files and folders to skip — analogous to `.gitignore`. JetBrains Junie adopted this pattern. Prevents agents from reading sensitive config files, large binaries, or generated code you don't want touched.
 
 - Reference: [jetbrains.com — aiignore](https://www.jetbrains.com/help/junie/aiignore.html)
+
+### Memory Bank (`cline_docs/` or `.roo/`)
+
+A project state architecture popularized by open-source agents like [Cline](https://github.com/cline/cline) and [Roo Code](https://github.com/RooVetGit/Roo-Code). Instead of a single static file, the agent maintains a directory of Markdown files (e.g., `activeContext.md`, `productContext.md`, `systemArchitecture.md`). This allows the agent to document and update its own contextual state as the project evolves across long-living sessions.
+
+---
+
+## Prompt asset files
+
+These conventions standardize how prompts are stored, versioned, and shared inside codebases, keeping them cleanly separated from application logic.
+
+### .prompty
+
+An asset class and open file format for prompts. Prompty files are modified Markdown documents with YAML frontmatter containing model configurations, inputs, and execution metadata, followed by the prompt template in Markdown.
+
+Initially introduced by Microsoft, it is now adopted by tools like Promptflow, LangChain, and Semantic Kernel.
+
+- Spec: [prompty.ai](https://prompty.ai)
+
+### .prompt and system_prompt.txt
+
+A more informal but widespread convention across various LLM CLIs and custom toolchains. Storing prompts in `.prompt` files or `system_prompt.txt` keeps the prompt content out of the script file, making it easier for human developers to read and edit them like normal text documents.
+
+- Reference: [Promptfoo](https://promptfoo.dev) natively parses `.prompt` files.
 
 ---
 
@@ -92,10 +130,12 @@ For teams using multiple agents, the symlink pattern keeps a canonical `.skills/
 
 ### DESIGN.md
 
-A markdown file placed in the project root that describes visual design intent for AI coding agents and tools like Google Stitch. No Figma exports, no JSON schemas, no special tooling — just markdown that tells the agent how the UI should look: typography, color palette, component patterns, spacing rules.
+A markdown file placed in the project root that defines a project's visual design system for AI design and coding agents. It combines YAML front matter for machine-readable tokens, such as colors, typography, spacing, and radius values, with Markdown prose that explains the visual intent and component patterns.
 
-The format emerged as an informal convention and has been rapidly adopted. The `awesome-design-md` repo curates DESIGN.md files extracted from real products and design systems.
+Google Stitch documents DESIGN.md as the design counterpart to AGENTS.md: a plain-text artifact that agents can read, edit, and apply when generating consistent screens. The format allows unknown sections and custom tokens, so teams can extend it for domain-specific design rules.
 
+- Spec: [Stitch — DESIGN.md specification](https://stitch.withgoogle.com/docs/design-md/specification)
+- Docs: [Stitch — What is DESIGN.md?](https://stitch.withgoogle.com/docs/design-md/overview)
 - Repo: [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
 - Directory: [getdesign.md](https://getdesign.md)
 
