@@ -20,6 +20,7 @@ This is a living registry of patterns the industry is converging on. Not framewo
   - [.prompt and system_prompt.txt](#prompt-and-system_prompttxt)
 - [Agent skill files](#agent-skill-files)
   - [SKILL.md](#skillmd)
+  - [skills.sh](#skillssh)
 - [Design and UI conventions](#design-and-ui-conventions)
   - [DESIGN.md](#designmd)
 - [Web and LLM discoverability](#web-and-llm-discoverability)
@@ -124,6 +125,18 @@ For teams using multiple agents, the symlink pattern keeps a canonical `.skills/
 - Docs: [platform.claude.com — Agent Skills overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - Docs: [platform.claude.com — Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
 - Community repos: [skillmatic-ai/awesome-agent-skills](https://github.com/skillmatic-ai/awesome-agent-skills), [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)
+
+### skills.sh
+
+A community registry and package manager for agent skills. Tracks install counts across a public leaderboard and lets anyone publish or discover skills for any supported agent. Install any skill into the current project with a single command:
+
+```sh
+npx skills init
+```
+
+Supports all major agents: AMP, Antigravity, Claude Code, ClawdBot, Cline, Codex, Cursor, Droid, Gemini, GitHub Copilot, Goose, Kilo, Kiro CLI, Nous Research, OpenCode, Roo, Trae, VSCode, and Windsurf.
+
+- Registry: [skills.sh](https://skills.sh/)
 
 ---
 
