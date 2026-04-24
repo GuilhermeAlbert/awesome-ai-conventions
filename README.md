@@ -27,6 +27,7 @@ This is a living registry of patterns the industry is converging on. Not framewo
 - [Protocols](#protocols)
   - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
   - [Agent Cards](#agent-cards)
+- [Examples](#examples)
 - [Contributing](#contributing)
 
 ---
@@ -173,6 +174,12 @@ A proposed standard for agents to expose their identity, capabilities, and trust
 
 - Spec: [Google A2A](https://google.github.io/A2A/)
 - Survey: [arxiv — Agent interoperability protocols](https://arxiv.org/abs/2505.01234)
+
+---
+
+## Examples
+
+Minimal example files for every convention in this list live in [examples/](examples/README.md). Each folder uses a stable slug and contains the file path a project would normally place in its own repository or service.
 
 ---
 
