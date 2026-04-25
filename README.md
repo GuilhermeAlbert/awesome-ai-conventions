@@ -25,6 +25,7 @@ This is a living registry of patterns the industry is converging on. Not framewo
   - [DESIGN.md](#designmd)
 - [Web and LLM discoverability](#web-and-llm-discoverability)
   - [llms.txt](#llmstxt)
+  - [pricing.md](#pricingmd)
 - [Protocols](#protocols)
   - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
   - [Agent Cards](#agent-cards)
@@ -166,6 +167,16 @@ By mid-2025, over 600 websites had adopted the standard, including Anthropic, St
 - Spec: [llmstxt.org](https://llmstxt.org)
 - Directory: [directory.llmstxt.cloud](https://directory.llmstxt.cloud)
 - Guide: [gitbook.com — What is llms.txt](https://www.gitbook.com/blog/what-is-llms-txt)
+
+### pricing.md
+
+A machine-readable pricing file served at `yourdomain.com/pricing.md`. The convention emerged from a practical problem: AI agents were getting confused by JS-rendered pricing pages with interactive sliders. Publishing a static Markdown version at a predictable URL — with content negotiation support (`Accept: text/markdown`) — gives agents a reliable way to parse plans, tiers, and overage rates without scraping.
+
+Popularized in 2025 by Resend, Auth0, and WorkOS, with the pattern spreading across developer-focused SaaS companies.
+
+- Example: [resend.com/pricing.md](https://resend.com/pricing.md)
+- Example: [auth0.com/pricing.md](https://auth0.com/pricing.md)
+- Example: [workos.com/pricing.md](https://workos.com/pricing.md)
 
 ---
 

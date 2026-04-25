@@ -36,6 +36,7 @@ Each folder uses a stable slug instead of repeating filenames in the directory n
 
 - [llms.txt](llms-txt/llms.txt)
 - [llms-full.txt](llms-txt/llms-full.txt)
+- [pricing.md](pricing-md/pricing.md)
 
 ## Protocols
 
