@@ -3,7 +3,7 @@ title: "README Mirror"
 sidebar_position: 2
 ---
 
-# awesome-ai-conventions [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome AI Conventions [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > A curated list of emerging conventions, file standards, and protocols for building with AI agents.
 
@@ -40,7 +40,6 @@ This is a living registry of patterns the industry is converging on. Not framewo
   - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
   - [Agent Cards](#agent-cards)
 - [Examples](#examples)
-- [Contributing](#contributing)
 
 ---
 
@@ -135,7 +134,7 @@ Skills are modular, on-demand capability files. Instead of loading all context u
 
 A markdown file with a YAML frontmatter header (`name`, `description`, `tools`, triggers) and a structured body with workflows, checklists, and output templates. The agent reads it from the filesystem on demand — it never enters the context window unless triggered.
 
-Published by Anthropic as an open standard in December 2025 at [agentskills.io](https://agentskills.io). OpenAI adopted the same format for Codex CLI and ChatGPT in the same period. GitHub Copilot followed in December 2025, reading skills from `.github/skills/`.
+Published by Anthropic as an open standard in December 2025. OpenAI adopted the same format for Codex CLI and ChatGPT in the same period. GitHub Copilot followed in December 2025, reading skills from `.github/skills/`.
 
 Standard install locations:
 
@@ -225,8 +224,8 @@ A JSON manifest served from `/.well-known/ai-plugin.json` that lets an AI client
 
 OpenAI introduced the convention for ChatGPT plugins. Plugins have since been superseded by GPT Actions in OpenAI's product, but the file remains a real legacy convention and is still supported by some plugin import flows that understand OpenAI-style manifests.
 
-- Example: [openai/plugins-quickstart](https://github.com/openai/plugins-quickstart)
-- Manifest example: [openai/plugins-quickstart/.well-known/ai-plugin.json](https://github.com/openai/plugins-quickstart/blob/main/.well-known/ai-plugin.json)
+- Example: [OpenAI/plugins-quickstart](https://github.com/openai/plugins-quickstart)
+- Manifest example: [OpenAI/plugins-quickstart/.well-known/ai-plugin.json](https://github.com/openai/plugins-quickstart/blob/main/.well-known/ai-plugin.json)
 - Reference: [Microsoft Security Copilot API plugins](https://learn.microsoft.com/en-us/copilot/security/plugin-api)
 
 ---
@@ -269,9 +268,3 @@ To add a convention:
 3. It must be a **file-based convention or open protocol** — not a framework or tool
 
 Open a PR with the convention name, a brief description in plain language, and links to the spec and at least one real-world reference.
-
----
-
-## License
-
-[MIT](https://github.com/guilhermealbert/awesome-ai-conventions/blob/main/LICENSE): permissive open-source license.

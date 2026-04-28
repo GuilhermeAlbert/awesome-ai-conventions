@@ -33,8 +33,8 @@ A JSON manifest served from `/.well-known/ai-plugin.json` that lets an AI client
 
 OpenAI introduced the convention for ChatGPT plugins. Plugins have since been superseded by GPT Actions in OpenAI's product, but the file remains a real legacy convention and is still supported by some plugin import flows that understand OpenAI-style manifests.
 
-- Example: [openai/plugins-quickstart](https://github.com/openai/plugins-quickstart)
-- Manifest example: [openai/plugins-quickstart/.well-known/ai-plugin.json](https://github.com/openai/plugins-quickstart/blob/main/.well-known/ai-plugin.json)
+- Example: [OpenAI/plugins-quickstart](https://github.com/openai/plugins-quickstart)
+- Manifest example: [OpenAI/plugins-quickstart/.well-known/ai-plugin.json](https://github.com/openai/plugins-quickstart/blob/main/.well-known/ai-plugin.json)
 - Reference: [Microsoft Security Copilot API plugins](https://learn.microsoft.com/en-us/copilot/security/plugin-api)
 
 ---

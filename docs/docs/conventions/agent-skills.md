@@ -13,7 +13,7 @@ Skills are modular, on-demand capability files. Instead of loading all context u
 
 A markdown file with a YAML frontmatter header (`name`, `description`, `tools`, triggers) and a structured body with workflows, checklists, and output templates. The agent reads it from the filesystem on demand — it never enters the context window unless triggered.
 
-Published by Anthropic as an open standard in December 2025 at [agentskills.io](https://agentskills.io). OpenAI adopted the same format for Codex CLI and ChatGPT in the same period. GitHub Copilot followed in December 2025, reading skills from `.github/skills/`.
+Published by Anthropic as an open standard in December 2025. OpenAI adopted the same format for Codex CLI and ChatGPT in the same period. GitHub Copilot followed in December 2025, reading skills from `.github/skills/`.
 
 Standard install locations:
 
