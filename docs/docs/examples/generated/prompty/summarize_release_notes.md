@@ -1,0 +1,42 @@
+---
+title: "prompty/summarize_release_notes.prompty"
+---
+
+
+# `prompty/summarize_release_notes.prompty`
+
+Source: `examples/prompty/summarize_release_notes.prompty`
+
+````text
+---
+name: summarize_release_notes
+description: Turn raw changelog entries into concise user-facing release notes.
+model:
+  api: chat
+  configuration:
+    type: openai
+    model: gpt-4o-mini
+  parameters:
+    temperature: 0.2
+inputs:
+  changelog:
+    type: string
+    description: Raw changelog bullets from the release.
+  audience:
+    type: string
+    default: product users
+sample:
+  changelog: |
+    - Added CSV export for invoices.
+    - Fixed duplicate toast messages after retrying a failed payment.
+  audience: account managers
+---
+
+system:
+You write clear release notes for {{audience}}. Keep the tone factual and avoid marketing language.
+
+user:
+Summarize these changes in three bullets or fewer:
+
+{{changelog}}
+````

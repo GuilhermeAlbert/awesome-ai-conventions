@@ -1,0 +1,27 @@
+---
+title: "tool-specific-rules/.cursor/rules/project.mdc"
+---
+
+
+# `tool-specific-rules/.cursor/rules/project.mdc`
+
+Source: `examples/tool-specific-rules/.cursor/rules/project.mdc`
+
+````markdown
+---
+description: Project rules for application source, tests, and documentation
+globs:
+  - "src/**/*"
+  - "tests/**/*"
+  - "docs/**/*"
+alwaysApply: false
+---
+
+# Project Rules
+
+- Follow the instructions in `AGENTS.md` before making code changes.
+- Keep React components focused on rendering and delegate data fetching to services or hooks.
+- Prefer existing project helpers over introducing new dependencies.
+- Update or add tests when behavior changes.
+- Do not edit generated files unless the task explicitly asks for regeneration.
+````

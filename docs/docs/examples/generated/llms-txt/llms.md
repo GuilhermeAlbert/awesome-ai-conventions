@@ -1,0 +1,29 @@
+---
+title: "llms-txt/llms.txt"
+---
+
+
+# `llms-txt/llms.txt`
+
+Source: `examples/llms-txt/llms.txt`
+
+````text
+# Example Product Docs
+
+> Documentation for a fictional SaaS product used to manage customers and subscriptions.
+
+## Start Here
+
+- [Getting started](https://example.com/docs/getting-started.md): Setup, first login, and workspace creation.
+- [API overview](https://example.com/docs/api/overview.md): Authentication, pagination, errors, and rate limits.
+- [Webhooks](https://example.com/docs/webhooks.md): Event payloads and retry behavior.
+
+## Reference
+
+- [REST API](https://example.com/docs/api/reference.md): Complete endpoint reference.
+- [Changelog](https://example.com/docs/changelog.md): User-visible product and API changes.
+
+## Optional
+
+- [llms-full.txt](https://example.com/llms-full.txt): Expanded documentation bundle for offline ingestion.
+````

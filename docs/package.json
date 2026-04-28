@@ -1,0 +1,31 @@
+{
+  "name": "awesome-ai-conventions-docs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "generate": "node scripts/generate-docs.mjs",
+    "start": "npm run generate && docusaurus start --host 127.0.0.1",
+    "build": "npm run generate && docusaurus build",
+    "serve": "docusaurus serve build --host 127.0.0.1",
+    "clear": "docusaurus clear"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.9.2",
+    "@docusaurus/preset-classic": "3.9.2",
+    "@mdx-js/react": "^3.1.1",
+    "clsx": "^2.1.1",
+    "@easyops-cn/docusaurus-search-local": "0.55.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.9.2",
+    "@docusaurus/tsconfig": "3.9.2",
+    "@docusaurus/types": "3.9.2",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.17.0"
+  }
+}
