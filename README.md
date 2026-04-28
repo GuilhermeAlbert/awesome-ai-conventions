@@ -15,6 +15,8 @@ This is a living registry of patterns the industry is converging on. Not framewo
   - [.cursor/rules/, .clinerules, and .github/copilot-instructions.md](#cursorrules-clinerules-and-githubcopilot-instructionsmd)
   - [.aiignore](#aiignore)
   - [Memory Bank (`cline_docs/` or `.roo/`)](#memory-bank-cline_docs-or-roo)
+- [Workflow and state artifacts](#workflow-and-state-artifacts)
+  - [PLAN.md](#planmd)
 - [Prompt asset files](#prompt-asset-files)
   - [.prompty](#prompty)
   - [.prompt and system_prompt.txt](#prompt-and-system_prompttxt)
@@ -82,6 +84,21 @@ Tells AI agents which files and folders to skip — analogous to `.gitignore`. J
 ### Memory Bank (`cline_docs/` or `.roo/`)
 
 A project state architecture popularized by open-source agents like [Cline](https://github.com/cline/cline) and [Roo Code](https://github.com/RooVetGit/Roo-Code). Instead of a single static file, the agent maintains a directory of Markdown files (e.g., `activeContext.md`, `productContext.md`, `systemArchitecture.md`). This allows the agent to document and update its own contextual state as the project evolves across long-living sessions.
+
+---
+
+## Workflow and state artifacts
+
+These files capture what an agent intends to do or what state a session should carry forward. Unlike project-level instruction files, they are usually produced during a task and then reviewed or consumed by a later execution phase.
+
+### PLAN.md
+
+A Markdown implementation plan generated or maintained by an agent before code changes begin. The file gives humans a reviewable artifact for objective, context, approach, implementation steps, and validation criteria, while giving a later execution agent a stable handoff document.
+
+OpenHands documents this pattern in its Planning Mode: a planning agent writes a structured `PLAN.md` in the workspace, then an execution agent reads that file to implement the plan. The convention is still less universal than `AGENTS.md`, but it is a concrete file artifact used by agentic coding workflows.
+
+- Docs: [OpenHands — Creating Custom Agent](https://docs.openhands.dev/sdk/guides/agent-custom)
+- Product note: [OpenHands Planning Mode Beta](https://openhands.dev/blog/openhands-product-update---march-2026)
 
 ---
 

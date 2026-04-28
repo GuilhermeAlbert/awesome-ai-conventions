@@ -18,6 +18,10 @@ Each folder uses a stable slug instead of repeating filenames in the directory n
   - [cline_docs/activeContext.md](memory-bank/cline_docs/activeContext.md)
   - [.roo/activeContext.md](memory-bank/.roo/activeContext.md)
 
+## Workflow and state artifacts
+
+- [PLAN.md](plan-md/PLAN.md)
+
 ## Prompt asset files
 
 - [.prompty](prompty/summarize_release_notes.prompty)
