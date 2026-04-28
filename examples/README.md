@@ -32,11 +32,17 @@ Each folder uses a stable slug instead of repeating filenames in the directory n
 
 - [DESIGN.md](design-md/DESIGN.md)
 
+## Evaluation conventions
+
+- [EVAL.yaml](eval-yaml/EVAL.yaml)
+
 ## Web and LLM discoverability
 
 - [llms.txt](llms-txt/llms.txt)
 - [llms-full.txt](llms-txt/llms-full.txt)
 - [pricing.md](pricing-md/pricing.md)
+- [ai-plugin.json](ai-plugin/.well-known/ai-plugin.json)
+- [OpenAPI schema for ai-plugin.json](ai-plugin/openapi.yaml)
 
 ## Protocols
 

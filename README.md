@@ -23,9 +23,12 @@ This is a living registry of patterns the industry is converging on. Not framewo
   - [skills.sh](#skillssh)
 - [Design and UI conventions](#design-and-ui-conventions)
   - [DESIGN.md](#designmd)
+- [Evaluation conventions](#evaluation-conventions)
+  - [EVAL.yaml](#evalyaml)
 - [Web and LLM discoverability](#web-and-llm-discoverability)
   - [llms.txt](#llmstxt)
   - [pricing.md](#pricingmd)
+  - [ai-plugin.json](#ai-pluginjson)
 - [Protocols](#protocols)
   - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
   - [Agent Cards](#agent-cards)
@@ -156,6 +159,22 @@ Google Stitch documents DESIGN.md as the design counterpart to AGENTS.md: a plai
 
 ---
 
+## Evaluation conventions
+
+These conventions make agent behavior testable and version-controlled. They sit near prompts, skills, and agent instructions so teams can catch regressions when changing tools, prompts, models, or workflows.
+
+### EVAL.yaml
+
+AgentEvals defines a declarative YAML format for evaluating AI agent capabilities. The main file is `EVAL.yaml`, with test cases, criteria, rubrics, and evaluator definitions such as code judges, LLM judges, tool trajectory checks, field accuracy, and execution metrics.
+
+The pattern is useful when agent quality needs to be reviewed in pull requests or CI instead of living only in external dashboards. A repository can keep central evals in an `evals/` directory or colocate them with agent skills and prompts.
+
+- Spec: [AgentEvals specification overview](https://agentevals.io/specification/overview/)
+- Format: [AgentEvals EVAL format](https://agentevals.io/specification/eval-format/)
+- Repo: [agentevals/agentevals](https://github.com/agentevals/agentevals)
+
+---
+
 ## Web and LLM discoverability
 
 ### llms.txt
@@ -177,6 +196,16 @@ Popularized in 2025 by Resend, Auth0, and WorkOS, with the pattern spreading acr
 - Example: [resend.com/pricing.md](https://resend.com/pricing.md)
 - Example: [auth0.com/pricing.md](https://auth0.com/pricing.md)
 - Example: [workos.com/pricing.md](https://workos.com/pricing.md)
+
+### ai-plugin.json
+
+A JSON manifest served from `/.well-known/ai-plugin.json` that lets an AI client discover an API plugin. The manifest describes the API in human-facing and model-facing terms, declares authentication, and points to an OpenAPI schema that defines callable operations.
+
+OpenAI introduced the convention for ChatGPT plugins. Plugins have since been superseded by GPT Actions in OpenAI's product, but the file remains a real legacy convention and is still supported by some plugin import flows that understand OpenAI-style manifests.
+
+- Example: [openai/plugins-quickstart](https://github.com/openai/plugins-quickstart)
+- Manifest example: [openai/plugins-quickstart/.well-known/ai-plugin.json](https://github.com/openai/plugins-quickstart/blob/main/.well-known/ai-plugin.json)
+- Reference: [Microsoft Security Copilot API plugins](https://learn.microsoft.com/en-us/copilot/security/plugin-api)
 
 ---
 

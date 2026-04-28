@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Issue Tracker",
+  "name_for_model": "issue_tracker",
+  "description_for_human": "Create and search issues in an example issue tracker.",
+  "description_for_model": "Use this API to create issues, search existing issues, and fetch issue details when the user asks about project support or bug reports.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://example.com/openapi.yaml"
+  },
+  "logo_url": "https://example.com/logo.png",
+  "contact_email": "support@example.com",
+  "legal_info_url": "https://example.com/legal"
+}
