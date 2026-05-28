@@ -46,6 +46,7 @@ These files expose structured information to LLMs and API-aware clients.
 - `llms.txt`
 - `llms-full.txt`
 - `pricing.md`
+- `auth.md`
 - `/.well-known/ai-plugin.json`
 
 ## Protocol Layer

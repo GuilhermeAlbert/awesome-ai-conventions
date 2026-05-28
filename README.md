@@ -30,6 +30,7 @@ This is a living registry of patterns the industry is converging on. Not framewo
 - [Web and LLM discoverability](#web-and-llm-discoverability)
   - [llms.txt](#llmstxt)
   - [pricing.md](#pricingmd)
+  - [auth.md](#authmd)
   - [ai-plugin.json](#ai-pluginjson)
 - [Protocols](#protocols)
   - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
@@ -212,6 +213,15 @@ Popularized in 2025 by Resend, Auth0, and WorkOS, with the pattern spreading acr
 - Example: [resend.com/pricing.md](https://resend.com/pricing.md)
 - Example: [auth0.com/pricing.md](https://auth0.com/pricing.md)
 - Example: [workos.com/pricing.md](https://workos.com/pricing.md)
+
+### auth.md
+
+A markdown file served from `yourdomain.com/auth.md` that tells AI agents how to register, claim credentials, present credentials, handle errors, and recover from revocation. It acts as the prose companion to OAuth Protected Resource Metadata at `/.well-known/oauth-protected-resource`, which remains the authoritative source for endpoints and supported flows.
+
+WorkOS documents the convention for agentic registration flows. A typical file walks agents through discovery, method selection, registration shapes, OTP claim ceremony, credential usage, errors, and revocation behavior.
+
+- Docs: [WorkOS — The auth.md file](https://workos.com/auth-md/docs/auth-md)
+- Example: [workos/auth.md AUTH.md](https://github.com/workos/auth.md/blob/main/AUTH.md)
 
 ### ai-plugin.json
 

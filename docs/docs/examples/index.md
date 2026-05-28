@@ -12,6 +12,7 @@ Every page below is generated from the repository's `examples/**` files. Edit th
 - [`ai-plugin/.well-known/ai-plugin.json`](/docs/examples/generated/ai-plugin/well-known/ai-plugin)
 - [`ai-plugin/openapi.yaml`](/docs/examples/generated/ai-plugin/openapi)
 - [`aiignore/.aiignore`](/docs/examples/generated/aiignore)
+- [`auth-md/auth.md`](/docs/examples/generated/auth-md/auth)
 - [`claude-md/CLAUDE.md`](/docs/examples/generated/claude-md/CLAUDE)
 - [`design-md/DESIGN.md`](/docs/examples/generated/design-md/DESIGN)
 - [`eval-yaml/EVAL.yaml`](/docs/examples/generated/eval-yaml/EVAL)
