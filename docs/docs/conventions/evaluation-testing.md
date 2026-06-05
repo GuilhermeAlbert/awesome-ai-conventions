@@ -7,6 +7,19 @@ sidebar_position: 6
 
 > Version-controlled evaluation files for agent behavior and prompt quality.
 
+## How To Evaluate Entries
+
+Each entry in this family should make the following points clear:
+
+- What the convention is.
+- Where the file, URL, or protocol surface normally lives.
+- When a team should use it.
+- Adoption evidence from a public spec, canonical docs, or active ecosystem use.
+- Which example illustrates the convention, if one exists.
+- Related conventions that solve adjacent problems.
+
+## Registry Entries
+
 These conventions make agent behavior testable and version-controlled. They sit near prompts, skills, and agent instructions so teams can catch regressions when changing tools, prompts, models, or workflows.
 
 ### EVAL.yaml

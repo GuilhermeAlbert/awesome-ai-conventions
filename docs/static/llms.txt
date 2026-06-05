@@ -1,0 +1,27 @@
+# Awesome AI Conventions
+
+> A curated registry of file-based conventions and open protocols for AI-agent-ready projects.
+
+## Start Here
+
+- [Introduction](https://guilhermealbert.github.io/awesome-ai-conventions/docs/intro): Project scope and entry points.
+- [Decision Guide](https://guilhermealbert.github.io/awesome-ai-conventions/docs/decision_guide): How to choose the right convention for a project need.
+- [Layers](https://guilhermealbert.github.io/awesome-ai-conventions/docs/layers): Conceptual map of instruction, context, prompt, evaluation, discoverability, and protocol layers.
+- [Methodology](https://guilhermealbert.github.io/awesome-ai-conventions/docs/methodology): Inclusion criteria, evidence levels, updates, and removals.
+- [Examples](https://guilhermealbert.github.io/awesome-ai-conventions/docs/examples): Copyable example files generated from the repository.
+
+## Core Convention Families
+
+- [Project Context Files](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/project-context-files)
+- [Runtime and Guardrails](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/runtime-guardrails)
+- [Prompt Assets](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/prompt-assets)
+- [Agent Skills](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/agent-skills)
+- [Design and UI](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/design-ui)
+- [Evaluation and Testing](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/evaluation-testing)
+- [Web and LLM Discoverability](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/discoverability)
+- [Protocols](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/protocols)
+
+## Full Snapshot
+
+- [llms-full.txt](https://guilhermealbert.github.io/awesome-ai-conventions/llms-full.txt): Compact Markdown snapshot of the main docs.
+

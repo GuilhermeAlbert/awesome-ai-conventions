@@ -1,0 +1,110 @@
+# Awesome AI Conventions Full Docs Snapshot
+
+> A compact Markdown map of the documentation for LLM retrieval.
+
+## Project Scope
+
+Awesome AI Conventions tracks file-based conventions, predictable public paths, manifests, and open protocols that help humans, codebases, AI agents, and model clients communicate with less ambiguity.
+
+The registry does not list frameworks, SaaS products, private templates, or libraries by themselves. Entries should have public documentation, a canonical repository, a spec, or clear production usage.
+
+## Documentation Map
+
+### Introduction
+
+Use the introduction to understand what belongs in the registry, what does not belong, and where to start.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/intro
+
+### README Mirror
+
+The root README remains the source of truth for the curated registry. The Docusaurus mirror makes the same content navigable.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/readme
+
+### Layers
+
+The layers page groups conventions by workflow role: instruction, context and state, prompt and capability, evaluation, discoverability, and protocol interoperability.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/layers
+
+### Decision Guide
+
+The decision guide helps maintainers choose the smallest useful convention for a project need. It covers repository instructions, persistent context, prompt assets, capabilities, public discoverability, and interoperability.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/decision_guide
+
+### Methodology
+
+The methodology page defines inclusion criteria, exclusion criteria, evidence levels, entry shape, update policy, and removal policy.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/methodology
+
+### Status Taxonomy
+
+The status taxonomy separates accepted, candidate, watchlist, legacy, and deprecated conventions so readers do not treat every pattern as equally mature.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/status_taxonomy
+
+### For Maintainers
+
+The maintainers guide gives a practical path for making repositories easier for agents to understand, starting with `AGENTS.md`, `.aiignore`, and public LLM entry points.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/maintainers
+
+## Convention Families
+
+### Project Context Files
+
+Repository-root files that teach coding agents how to work inside a project.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/project-context-files
+
+### Runtime and Guardrails
+
+Files that control what agents should avoid, how work should be staged, and what state is safe to carry across a task.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/runtime-guardrails
+
+### Prompt Assets
+
+Prompt files and prompt formats that keep model instructions versioned with code.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/prompt-assets
+
+### Agent Skills
+
+On-demand capability files and skill registries used by AI agents.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/agent-skills
+
+### Design and UI
+
+Machine-readable design guidance for agents that generate product interfaces.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/design-ui
+
+### Evaluation and Testing
+
+Version-controlled evaluation files for agent behavior and prompt quality.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/evaluation-testing
+
+### Web and LLM Discoverability
+
+Files and well-known URLs that help LLMs discover docs, pricing, and APIs.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/discoverability
+
+### Protocols
+
+Open protocols for connecting agents, tools, resources, and other agents.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/protocols
+
+## Examples
+
+The examples section generates one docs page per file under `examples/**`. Edit source examples in the repository, then run `npm run generate` from `docs/` to refresh generated pages.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/examples
+

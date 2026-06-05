@@ -80,7 +80,7 @@ const manualPages = [
 
 Awesome AI Conventions is a curated registry of file-based conventions and open protocols for AI-agent-ready projects.
 
-The source of truth remains the repository root \`README.md\`. The Docusaurus site mirrors that registry into focused pages, adds navigation and local search, and generates browsable pages for every file under \`examples/**\`.
+The source of truth remains the repository root \`README.md\`. The Docusaurus site mirrors that registry into focused pages, explains how conventions are evaluated, and generates browsable pages for every file under \`examples/**\`.
 
 ## What Belongs Here
 
@@ -98,6 +98,8 @@ The source of truth remains the repository root \`README.md\`. The Docusaurus si
 
 - Read the full registry in [README Mirror](./readme.md).
 - Browse the conceptual map in [Layers](./layers.md).
+- Use the [Decision Guide](./decision_guide.md) to choose a convention for a specific project need.
+- Review the [Methodology](./methodology.md) and [Status Taxonomy](./status_taxonomy.md) before proposing new entries.
 - Explore copyable files in [Examples](./examples/index.md).
 `,
   },
@@ -107,7 +109,19 @@ The source of truth remains the repository root \`README.md\`. The Docusaurus si
     position: 3,
     body: `# Layers
 
-AI conventions are easier to reason about when grouped by the role they play in an agent workflow.
+AI conventions are easier to reason about when grouped by the role they play in an agent workflow. Use this map to decide which artifact belongs in a repository, docs site, or integration surface.
+
+## Quick Decision Map
+
+| Need | Start with | Why |
+| --- | --- | --- |
+| Tell coding agents how to work in a repository | \`AGENTS.md\` | Cross-tool project instructions are the highest-leverage baseline. |
+| Preserve long-lived project context | \`MEMORY.md\` or Memory Bank | These files keep stable knowledge and task state outside a single chat. |
+| Package a reusable agent capability | \`SKILL.md\` | Skills are loaded on demand when a task matches the description. |
+| Store prompts as versioned assets | \`.prompty\`, \`.prompt\`, or \`system_prompt.txt\` | Prompt files keep model instructions inspectable and reviewable. |
+| Make behavior measurable | \`EVAL.yaml\` | Evals turn agent quality into a repeatable check. |
+| Help LLMs discover public docs | \`llms.txt\` and \`llms-full.txt\` | Predictable Markdown entry points reduce scraping ambiguity. |
+| Connect models to tools or agents | MCP, A2A, Agent Cards | Protocols define interoperability beyond one repository. |
 
 ## Instruction Layer
 
@@ -330,6 +344,19 @@ async function writeManualDocs(readme) {
 
 > ${page.description}
 
+## How To Evaluate Entries
+
+Each entry in this family should make the following points clear:
+
+- What the convention is.
+- Where the file, URL, or protocol surface normally lives.
+- When a team should use it.
+- Adoption evidence from a public spec, canonical docs, or active ecosystem use.
+- Which example illustrates the convention, if one exists.
+- Related conventions that solve adjacent problems.
+
+## Registry Entries
+
 ${section.replace(/^## .+$/m, '').trim()}
 `;
 
@@ -360,6 +387,19 @@ async function writeExamples() {
 
 Source: \`examples/${normalized}\`
 
+## When To Use This Example
+
+Use this page as a concrete starting point when the file path and convention type match your project. Treat the content as a reference shape, not as a mandatory template.
+
+## How To Adapt It
+
+- Keep fields that describe real project behavior.
+- Remove placeholders that do not apply to your repository.
+- Prefer short, explicit instructions over broad policy language.
+- Link the adapted file back to the convention it supports when possible.
+
+## Source File
+
 ${fence}${languageFor(normalized)}
 ${content.replace(/\s+$/g, '')}
 ${fence}
@@ -379,6 +419,13 @@ ${fence}
     `${frontMatter('Examples', 1)}# Examples
 
 Every page below is generated from the repository's \`examples/**\` files. Edit the source example, then run \`npm run generate\` from \`docs/\` to refresh this section.
+
+## How To Use These Examples
+
+- Copy examples as starting points, not as universal templates.
+- Keep only fields that are true for your project.
+- Prefer the shortest useful file before adding team-specific policy.
+- Update the source file in \`examples/**\`; generated docs are overwritten.
 
 ${indexList}
 `,

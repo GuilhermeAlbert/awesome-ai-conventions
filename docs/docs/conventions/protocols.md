@@ -7,6 +7,19 @@ sidebar_position: 8
 
 > Open protocols for connecting agents, tools, resources, and other agents.
 
+## How To Evaluate Entries
+
+Each entry in this family should make the following points clear:
+
+- What the convention is.
+- Where the file, URL, or protocol surface normally lives.
+- When a team should use it.
+- Adoption evidence from a public spec, canonical docs, or active ecosystem use.
+- Which example illustrates the convention, if one exists.
+- Related conventions that solve adjacent problems.
+
+## Registry Entries
+
 ### Model Context Protocol (MCP)
 
 An open protocol for connecting AI models to external tools, APIs, and data sources. Described as "USB-C for AI models." Created by Anthropic and donated to the Agentic AI Foundation (Linux Foundation) in December 2025, alongside AGENTS.md and Goose.

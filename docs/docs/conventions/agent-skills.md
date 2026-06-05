@@ -7,6 +7,19 @@ sidebar_position: 4
 
 > On-demand capability files and skill registries used by AI agents.
 
+## How To Evaluate Entries
+
+Each entry in this family should make the following points clear:
+
+- What the convention is.
+- Where the file, URL, or protocol surface normally lives.
+- When a team should use it.
+- Adoption evidence from a public spec, canonical docs, or active ecosystem use.
+- Which example illustrates the convention, if one exists.
+- Related conventions that solve adjacent problems.
+
+## Registry Entries
+
 Skills are modular, on-demand capability files. Instead of loading all context upfront, an agent reads a skill file only when the task matches its description. The format has converged into an open standard.
 
 ### SKILL.md

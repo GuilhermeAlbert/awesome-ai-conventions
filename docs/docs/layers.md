@@ -5,7 +5,19 @@ sidebar_position: 3
 
 # Layers
 
-AI conventions are easier to reason about when grouped by the role they play in an agent workflow.
+AI conventions are easier to reason about when grouped by the role they play in an agent workflow. Use this map to decide which artifact belongs in a repository, docs site, or integration surface.
+
+## Quick Decision Map
+
+| Need | Start with | Why |
+| --- | --- | --- |
+| Tell coding agents how to work in a repository | `AGENTS.md` | Cross-tool project instructions are the highest-leverage baseline. |
+| Preserve long-lived project context | `MEMORY.md` or Memory Bank | These files keep stable knowledge and task state outside a single chat. |
+| Package a reusable agent capability | `SKILL.md` | Skills are loaded on demand when a task matches the description. |
+| Store prompts as versioned assets | `.prompty`, `.prompt`, or `system_prompt.txt` | Prompt files keep model instructions inspectable and reviewable. |
+| Make behavior measurable | `EVAL.yaml` | Evals turn agent quality into a repeatable check. |
+| Help LLMs discover public docs | `llms.txt` and `llms-full.txt` | Predictable Markdown entry points reduce scraping ambiguity. |
+| Connect models to tools or agents | MCP, A2A, Agent Cards | Protocols define interoperability beyond one repository. |
 
 ## Instruction Layer
 

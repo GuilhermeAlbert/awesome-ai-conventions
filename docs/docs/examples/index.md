@@ -7,6 +7,13 @@ sidebar_position: 1
 
 Every page below is generated from the repository's `examples/**` files. Edit the source example, then run `npm run generate` from `docs/` to refresh this section.
 
+## How To Use These Examples
+
+- Copy examples as starting points, not as universal templates.
+- Keep only fields that are true for your project.
+- Prefer the shortest useful file before adding team-specific policy.
+- Update the source file in `examples/**`; generated docs are overwritten.
+
 - [`agent-cards/.well-known/agent-card.json`](/docs/examples/generated/agent-cards/well-known/agent-card)
 - [`agents-md/AGENTS.md`](/docs/examples/generated/agents-md/AGENTS)
 - [`ai-plugin/.well-known/ai-plugin.json`](/docs/examples/generated/ai-plugin/well-known/ai-plugin)

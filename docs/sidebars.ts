@@ -5,6 +5,10 @@ const sidebars: SidebarsConfig = {
     'intro',
     'readme',
     'layers',
+    'decision_guide',
+    'methodology',
+    'status_taxonomy',
+    'maintainers',
     {
       type: 'category',
       label: 'Conventions',

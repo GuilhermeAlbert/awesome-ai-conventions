@@ -7,6 +7,19 @@ sidebar_position: 7
 
 > Files and well-known URLs that help LLMs discover docs, pricing, and APIs.
 
+## How To Evaluate Entries
+
+Each entry in this family should make the following points clear:
+
+- What the convention is.
+- Where the file, URL, or protocol surface normally lives.
+- When a team should use it.
+- Adoption evidence from a public spec, canonical docs, or active ecosystem use.
+- Which example illustrates the convention, if one exists.
+- Related conventions that solve adjacent problems.
+
+## Registry Entries
+
 ### llms.txt
 
 A plain markdown file placed at `yourdomain.com/llms.txt` that tells AI crawlers which parts of your site are best suited for LLM ingestion. Proposed by Jeremy Howard (FastAI) in September 2024. A companion `llms-full.txt` contains the full content in a single file.

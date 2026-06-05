@@ -6,22 +6,22 @@ import styles from './index.module.css';
 
 const featureCards = [
   {
-    title: 'File-Based Standards',
+    title: 'Decision Guide',
     description:
-      'Track the conventions AI agents can read directly from repositories, docs sites, and well-known URLs.',
-    link: '/docs/conventions/project-context-files',
+      'Choose the smallest convention that solves a concrete agent-readiness problem.',
+    link: '/docs/decision_guide',
   },
   {
-    title: 'Production Examples',
+    title: 'Copyable Examples',
     description:
-      'Browse copyable examples generated from the repository examples folder, including hidden well-known files.',
+      'Browse generated pages for every example file, including hidden well-known paths.',
     link: '/docs/examples',
   },
   {
-    title: 'Protocol Map',
+    title: 'Methodology',
     description:
-      'Understand how project context, prompts, skills, discoverability, evals, and protocols fit together.',
-    link: '/docs/layers',
+      'See how entries are evaluated, updated, demoted, and removed from the registry.',
+    link: '/docs/methodology',
   },
 ];
 
@@ -62,8 +62,8 @@ export default function Home(): JSX.Element {
             <span>example files</span>
           </div>
           <div>
-            <strong>0</strong>
-            <span>backend services</span>
+            <strong>5</strong>
+            <span>status levels</span>
           </div>
         </section>
 
