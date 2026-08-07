@@ -5,23 +5,25 @@
 ## Start Here
 
 - [Introduction](https://guilhermealbert.github.io/awesome-ai-conventions/docs/intro): Project scope and entry points.
-- [Decision Guide](https://guilhermealbert.github.io/awesome-ai-conventions/docs/decision_guide): How to choose the right convention for a project need.
-- [Layers](https://guilhermealbert.github.io/awesome-ai-conventions/docs/layers): Conceptual map of instruction, context, prompt, evaluation, discoverability, and protocol layers.
+- [Harness Engineering](https://guilhermealbert.github.io/awesome-ai-conventions/docs/harness-engineering): How context, tools, control loops, safety, evaluation, and observability compose around an agent run.
+- [Layers](https://guilhermealbert.github.io/awesome-ai-conventions/docs/layers): Conceptual map of instruction, context, execution, evaluation, observability, discoverability, and interoperability layers.
+- [Decision Guide](https://guilhermealbert.github.io/awesome-ai-conventions/docs/decision_guide): How to choose the smallest convention for a project need.
 - [Methodology](https://guilhermealbert.github.io/awesome-ai-conventions/docs/methodology): Inclusion criteria, evidence levels, updates, and removals.
-- [Examples](https://guilhermealbert.github.io/awesome-ai-conventions/docs/examples): Copyable example files generated from the repository.
+- [Status Taxonomy](https://guilhermealbert.github.io/awesome-ai-conventions/docs/status_taxonomy): Accepted, candidate, watchlist, legacy, and deprecated maturity labels.
+- [For Maintainers](https://guilhermealbert.github.io/awesome-ai-conventions/docs/maintainers): Practical guidance for maintaining an agent-ready registry.
 
 ## Core Convention Families
 
-- [Project Context Files](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/project-context-files)
-- [Runtime and Guardrails](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/runtime-guardrails)
-- [Prompt Assets](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/prompt-assets)
-- [Agent Skills](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/agent-skills)
-- [Design and UI](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/design-ui)
-- [Evaluation and Testing](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/evaluation-testing)
-- [Web and LLM Discoverability](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/discoverability)
-- [Protocols](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/protocols)
+- [Project Context Files](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/project-context-files): Repository-root files that teach coding agents how to work inside a project.
+- [Runtime and Guardrails](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/runtime-guardrails): Files and policies for scope, staged work, and safe execution.
+- [Prompt Assets](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/prompt-assets): Versioned prompt files and formats.
+- [Agent Skills](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/agent-skills): On-demand capability files and skill registries.
+- [Design and UI](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/design-ui): Machine-readable design guidance for interface-generating agents.
+- [Evaluation and Testing](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/evaluation-testing): Version-controlled evaluation files for agent behavior.
+- [Observability and Tracing](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/observability-tracing): Semantic conventions for model, agent, tool, guardrail, and evaluation telemetry.
+- [Web and LLM Discoverability](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/discoverability): Predictable public files and URLs for model clients.
+- [Protocols](https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/protocols): MCP, A2A, and ACP interoperability boundaries.
 
 ## Full Snapshot
 
 - [llms-full.txt](https://guilhermealbert.github.io/awesome-ai-conventions/llms-full.txt): Compact Markdown snapshot of the main docs.
-

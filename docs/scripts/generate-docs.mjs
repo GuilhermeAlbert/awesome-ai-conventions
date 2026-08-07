@@ -11,6 +11,8 @@ const examplesDir = path.join(docsDir, 'examples');
 const generatedExamplesDir = path.join(examplesDir, 'generated');
 const rootReadmePath = path.join(repoRoot, 'README.md');
 const repoExamplesDir = path.join(repoRoot, 'examples');
+const staticDir = path.join(docsRoot, 'static');
+const siteDocsUrl = 'https://guilhermealbert.github.io/awesome-ai-conventions/docs';
 
 const sectionPages = [
   {
@@ -54,10 +56,18 @@ const sectionPages = [
       'Version-controlled evaluation files for agent behavior and prompt quality.',
   },
   {
+    id: 'observability-tracing',
+    title: 'Observability and Tracing',
+    heading: 'Observability and tracing conventions',
+    position: 7,
+    description:
+      'Semantic conventions for tracing model calls, agents, tools, guardrails, and evaluations.',
+  },
+  {
     id: 'discoverability',
     title: 'Web and LLM Discoverability',
     heading: 'Web and LLM discoverability',
-    position: 7,
+    position: 8,
     description:
       'Files and well-known URLs that help LLMs discover docs, pricing, and APIs.',
   },
@@ -65,7 +75,7 @@ const sectionPages = [
     id: 'protocols',
     title: 'Protocols',
     heading: 'Protocols',
-    position: 8,
+    position: 9,
     description:
       'Open protocols for connecting agents, tools, resources, and other agents.',
   },
@@ -98,6 +108,7 @@ The source of truth remains the repository root \`README.md\`. The Docusaurus si
 
 - Read the full registry in [README Mirror](./readme.md).
 - Browse the conceptual map in [Layers](./layers.md).
+- Read [Harness Engineering](./harness-engineering.md) to see how the conventions compose around an agent run.
 - Use the [Decision Guide](./decision_guide.md) to choose a convention for a specific project need.
 - Review the [Methodology](./methodology.md) and [Status Taxonomy](./status_taxonomy.md) before proposing new entries.
 - Explore copyable files in [Examples](./examples/index.md).
@@ -119,9 +130,13 @@ AI conventions are easier to reason about when grouped by the role they play in 
 | Preserve long-lived project context | \`MEMORY.md\` or Memory Bank | These files keep stable knowledge and task state outside a single chat. |
 | Package a reusable agent capability | \`SKILL.md\` | Skills are loaded on demand when a task matches the description. |
 | Store prompts as versioned assets | \`.prompty\`, \`.prompt\`, or \`system_prompt.txt\` | Prompt files keep model instructions inspectable and reviewable. |
+| Restrict files or stage risky work | \`.aiignore\`, scoped rules, and \`PLAN.md\` | Guardrails reduce accidental reads, writes, and unreviewed execution. |
 | Make behavior measurable | \`EVAL.yaml\` | Evals turn agent quality into a repeatable check. |
+| Trace agent execution | OpenTelemetry GenAI or OpenInference | Semantic conventions make model, agent, and tool telemetry comparable. |
 | Help LLMs discover public docs | \`llms.txt\` and \`llms-full.txt\` | Predictable Markdown entry points reduce scraping ambiguity. |
-| Connect models to tools or agents | MCP, A2A, Agent Cards | Protocols define interoperability beyond one repository. |
+| Connect an agent to tools and data | MCP | MCP standardizes the agent-to-tool boundary. |
+| Connect independent agents | A2A | A2A standardizes discovery and task exchange between agents. |
+| Connect a coding agent to an editor | ACP | ACP standardizes the client-to-agent boundary. |
 
 ## Instruction Layer
 
@@ -149,11 +164,26 @@ These files package model instructions and agent capabilities into reusable asse
 - \`system_prompt.txt\`
 - \`SKILL.md\`
 
+## Execution and Safety Layer
+
+Runtime loops, authorization checks, budgets, retries, and output validation are usually implemented by the agent host. Repository conventions can influence these controls but do not implement the runtime by themselves.
+
+- \`.aiignore\`
+- \`PLAN.md\`
+- Tool-specific scoped rules
+
 ## Evaluation Layer
 
 These files make behavior testable and repeatable.
 
 - \`EVAL.yaml\`
+
+## Observability Layer
+
+These semantic conventions describe agent runs as traces, spans, metrics, and events.
+
+- OpenTelemetry GenAI Semantic Conventions
+- OpenInference Semantic Conventions
 
 ## Discoverability Layer
 
@@ -165,12 +195,13 @@ These files expose structured information to LLMs and API-aware clients.
 - \`auth.md\`
 - \`/.well-known/ai-plugin.json\`
 
-## Protocol Layer
+## Interoperability Layer
 
-These standards define interoperability between tools, models, and agents.
+These standards define interoperability across different harness boundaries.
 
-- Model Context Protocol
-- Agent Cards / A2A
+- Model Context Protocol for agents, tools, and data
+- Agent2Agent Protocol for independent agents
+- Agent Client Protocol for coding agents and editor clients
 `,
   },
   {
@@ -432,13 +463,128 @@ ${indexList}
   );
 }
 
+const llmPages = [
+  ['intro', 'Introduction', 'Project scope and entry points.'],
+  [
+    'harness-engineering',
+    'Harness Engineering',
+    'How context, tools, control loops, safety, evaluation, and observability compose around an agent run.',
+  ],
+  [
+    'layers',
+    'Layers',
+    'Conceptual map of instruction, context, execution, evaluation, observability, discoverability, and interoperability layers.',
+  ],
+  ['decision_guide', 'Decision Guide', 'How to choose the smallest convention for a project need.'],
+  ['methodology', 'Methodology', 'Inclusion criteria, evidence levels, updates, and removals.'],
+  [
+    'status_taxonomy',
+    'Status Taxonomy',
+    'Accepted, candidate, watchlist, legacy, and deprecated maturity labels.',
+  ],
+  ['maintainers', 'For Maintainers', 'Practical guidance for maintaining an agent-ready registry.'],
+  [
+    'conventions/project-context-files',
+    'Project Context Files',
+    'Repository-root files that teach coding agents how to work inside a project.',
+  ],
+  [
+    'conventions/runtime-guardrails',
+    'Runtime and Guardrails',
+    'Files and policies for scope, staged work, and safe execution.',
+  ],
+  ['conventions/prompt-assets', 'Prompt Assets', 'Versioned prompt files and formats.'],
+  ['conventions/agent-skills', 'Agent Skills', 'On-demand capability files and skill registries.'],
+  [
+    'conventions/design-ui',
+    'Design and UI',
+    'Machine-readable design guidance for interface-generating agents.',
+  ],
+  [
+    'conventions/evaluation-testing',
+    'Evaluation and Testing',
+    'Version-controlled evaluation files for agent behavior.',
+  ],
+  [
+    'conventions/observability-tracing',
+    'Observability and Tracing',
+    'Semantic conventions for model, agent, tool, guardrail, and evaluation telemetry.',
+  ],
+  [
+    'conventions/discoverability',
+    'Web and LLM Discoverability',
+    'Predictable public files and URLs for model clients.',
+  ],
+  ['conventions/protocols', 'Protocols', 'MCP, A2A, and ACP interoperability boundaries.'],
+  ['examples', 'Examples', 'Generated pages for copyable convention files.'],
+];
+
+export function renderLlmsDocuments() {
+  const pageLine = ([id, title, description]) =>
+    `- [${title}](${siteDocsUrl}/${id}): ${description}`;
+  const startHere = llmPages.slice(0, 7).map(pageLine).join('\n');
+  const families = llmPages.slice(7, 16).map(pageLine).join('\n');
+  const fullMap = llmPages
+    .map(
+      ([id, title, description]) =>
+        `### ${title}\n\n${description}\n\nURL: ${siteDocsUrl}/${id}`,
+    )
+    .join('\n\n');
+
+  const concise = `# Awesome AI Conventions
+
+> A curated registry of file-based conventions and open protocols for AI-agent-ready projects.
+
+## Start Here
+
+${startHere}
+
+## Core Convention Families
+
+${families}
+
+## Full Snapshot
+
+- [llms-full.txt](https://guilhermealbert.github.io/awesome-ai-conventions/llms-full.txt): Compact Markdown snapshot of the main docs.
+`;
+  const full = `# Awesome AI Conventions Full Docs Snapshot
+
+> A compact Markdown map of the documentation for LLM retrieval.
+
+## Project Scope
+
+Awesome AI Conventions tracks file-based conventions, predictable public paths, manifests, and open protocols that help humans, codebases, AI agents, and model clients communicate with less ambiguity.
+
+The registry does not list frameworks, SaaS products, private templates, or libraries by themselves. Entries should have public documentation, a canonical repository, a spec, or clear production usage.
+
+## Documentation Map
+
+${fullMap}
+`;
+
+  return {concise, full};
+}
+
+async function writeLlmsFiles() {
+  const {concise, full} = renderLlmsDocuments();
+
+  await fs.mkdir(staticDir, {recursive: true});
+  await Promise.all([
+    fs.writeFile(path.join(staticDir, 'llms.txt'), concise),
+    fs.writeFile(path.join(staticDir, 'llms-full.txt'), full),
+  ]);
+}
+
 async function main() {
   const readme = await fs.readFile(rootReadmePath, 'utf8');
   await writeManualDocs(readme);
   await writeExamples();
+  await writeLlmsFiles();
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}

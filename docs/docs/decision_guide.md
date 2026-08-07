@@ -61,6 +61,30 @@ Good fit:
 
 Avoid skills for one-off notes or generic project rules.
 
+## Evaluation
+
+Use `EVAL.yaml` when a prompt, skill, or agent workflow needs repeatable acceptance criteria.
+
+Good fit:
+
+- Comparing behavior across prompt or model changes.
+- Checking tool trajectories and structured output fields.
+- Turning a recurring production failure into a regression case.
+
+Do not use tracing as a substitute for an eval. Traces explain a run; evals judge whether its result met the requirement.
+
+## Observability
+
+Use OpenTelemetry GenAI or OpenInference semantic conventions when a multi-step run needs consistent traces, metrics, or events.
+
+Good fit:
+
+- Locating latency or failures across model, retrieval, agent, and tool spans.
+- Measuring token usage, retries, exceptions, and evaluator results.
+- Exporting telemetry to more than one compatible backend.
+
+Do not capture prompt, response, retrieval, or tool content by default. Define redaction, access, and retention policies first.
+
 ## Public Discoverability
 
 Use `llms.txt`, `llms-full.txt`, `pricing.md`, `auth.md`, or `ai-plugin.json` when agents need predictable public entry points.
@@ -74,22 +98,26 @@ Good fit:
 
 ## Interoperability
 
-Use protocols such as MCP, A2A, and Agent Cards when systems need to communicate across tool or vendor boundaries.
+Choose the protocol that matches the boundary:
 
-Good fit:
+| Boundary | Protocol | Use when |
+| --- | --- | --- |
+| Agent or model host to tools and data | MCP | A client needs portable tools, resources, or prompts. |
+| Independent agent to independent agent | A2A | Agents need discovery, task exchange, streaming, or artifacts. |
+| Editor or client to coding agent | ACP | A coding agent should work through multiple compatible interfaces. |
 
-- Exposing tools and resources to model hosts.
-- Describing agent identity and capabilities.
-- Supporting multi-agent workflows.
-- Integrating with clients beyond a single product.
+These protocols can coexist in one harness. Do not add one until the corresponding integration boundary exists.
 
 ## Minimal Adoption Path
 
 For most projects:
 
 1. Add `AGENTS.md`.
-2. Add `.aiignore` if sensitive or noisy files exist.
-3. Add `llms.txt` for public docs.
-4. Add `SKILL.md` only when a reusable agent workflow emerges.
-5. Add evals when behavior needs to be measured repeatedly.
+2. Add `.aiignore` or supported scoped rules for secrets and generated noise.
+3. Use `PLAN.md` for multi-step or risky work.
+4. Extract repeated specialist workflows into `SKILL.md`.
+5. Add evals for behavior that must remain stable.
+6. Add tracing when multi-step failures are difficult to diagnose.
+7. Add MCP, A2A, or ACP only for a real integration boundary.
 
+See [Harness Engineering](./harness-engineering.md) for the complete agent-run lifecycle.

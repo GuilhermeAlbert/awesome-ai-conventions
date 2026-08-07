@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "generate": "node scripts/generate-docs.mjs",
+    "test": "node --test scripts/*.test.mjs",
     "start": "npm run generate && docusaurus start --host 127.0.0.1",
     "build": "npm run generate && docusaurus build",
     "serve": "docusaurus serve build --host 127.0.0.1",

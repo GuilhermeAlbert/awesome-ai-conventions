@@ -12,47 +12,45 @@ The registry does not list frameworks, SaaS products, private templates, or libr
 
 ### Introduction
 
-Use the introduction to understand what belongs in the registry, what does not belong, and where to start.
+Project scope and entry points.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/intro
 
-### README Mirror
+### Harness Engineering
 
-The root README remains the source of truth for the curated registry. The Docusaurus mirror makes the same content navigable.
+How context, tools, control loops, safety, evaluation, and observability compose around an agent run.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/readme
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/harness-engineering
 
 ### Layers
 
-The layers page groups conventions by workflow role: instruction, context and state, prompt and capability, evaluation, discoverability, and protocol interoperability.
+Conceptual map of instruction, context, execution, evaluation, observability, discoverability, and interoperability layers.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/layers
 
 ### Decision Guide
 
-The decision guide helps maintainers choose the smallest useful convention for a project need. It covers repository instructions, persistent context, prompt assets, capabilities, public discoverability, and interoperability.
+How to choose the smallest convention for a project need.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/decision_guide
 
 ### Methodology
 
-The methodology page defines inclusion criteria, exclusion criteria, evidence levels, entry shape, update policy, and removal policy.
+Inclusion criteria, evidence levels, updates, and removals.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/methodology
 
 ### Status Taxonomy
 
-The status taxonomy separates accepted, candidate, watchlist, legacy, and deprecated conventions so readers do not treat every pattern as equally mature.
+Accepted, candidate, watchlist, legacy, and deprecated maturity labels.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/status_taxonomy
 
 ### For Maintainers
 
-The maintainers guide gives a practical path for making repositories easier for agents to understand, starting with `AGENTS.md`, `.aiignore`, and public LLM entry points.
+Practical guidance for maintaining an agent-ready registry.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/maintainers
-
-## Convention Families
 
 ### Project Context Files
 
@@ -62,49 +60,54 @@ URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/p
 
 ### Runtime and Guardrails
 
-Files that control what agents should avoid, how work should be staged, and what state is safe to carry across a task.
+Files and policies for scope, staged work, and safe execution.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/runtime-guardrails
 
 ### Prompt Assets
 
-Prompt files and prompt formats that keep model instructions versioned with code.
+Versioned prompt files and formats.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/prompt-assets
 
 ### Agent Skills
 
-On-demand capability files and skill registries used by AI agents.
+On-demand capability files and skill registries.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/agent-skills
 
 ### Design and UI
 
-Machine-readable design guidance for agents that generate product interfaces.
+Machine-readable design guidance for interface-generating agents.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/design-ui
 
 ### Evaluation and Testing
 
-Version-controlled evaluation files for agent behavior and prompt quality.
+Version-controlled evaluation files for agent behavior.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/evaluation-testing
 
+### Observability and Tracing
+
+Semantic conventions for model, agent, tool, guardrail, and evaluation telemetry.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/observability-tracing
+
 ### Web and LLM Discoverability
 
-Files and well-known URLs that help LLMs discover docs, pricing, and APIs.
+Predictable public files and URLs for model clients.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/discoverability
 
 ### Protocols
 
-Open protocols for connecting agents, tools, resources, and other agents.
+MCP, A2A, and ACP interoperability boundaries.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/protocols
 
-## Examples
+### Examples
 
-The examples section generates one docs page per file under `examples/**`. Edit source examples in the repository, then run `npm run generate` from `docs/` to refresh generated pages.
+Generated pages for copyable convention files.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/examples
-

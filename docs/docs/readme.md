@@ -32,6 +32,9 @@ This is a living registry of patterns the industry is converging on. Not framewo
   - [DESIGN.md](#designmd)
 - [Evaluation conventions](#evaluation-conventions)
   - [EVAL.yaml](#evalyaml)
+- [Observability and tracing conventions](#observability-and-tracing-conventions)
+  - [OpenTelemetry GenAI Semantic Conventions](#opentelemetry-genai-semantic-conventions)
+  - [OpenInference Semantic Conventions](#openinference-semantic-conventions)
 - [Web and LLM discoverability](#web-and-llm-discoverability)
   - [llms.txt](#llmstxt)
   - [pricing.md](#pricingmd)
@@ -39,7 +42,8 @@ This is a living registry of patterns the industry is converging on. Not framewo
   - [ai-plugin.json](#ai-pluginjson)
 - [Protocols](#protocols)
   - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
-  - [Agent Cards](#agent-cards)
+  - [Agent2Agent Protocol (A2A)](#agent2agent-protocol-a2a)
+  - [Agent Client Protocol (ACP)](#agent-client-protocol-acp)
 - [Examples](#examples)
 
 ---
@@ -197,6 +201,31 @@ The pattern is useful when agent quality needs to be reviewed in pull requests o
 
 ---
 
+## Observability and tracing conventions
+
+These conventions give traces, spans, metrics, and events consistent names so agent runs can be inspected across model calls, tool execution, retrieval, guardrails, and evaluation.
+
+### OpenTelemetry GenAI Semantic Conventions
+
+The OpenTelemetry GenAI Semantic Conventions define common telemetry for generative AI systems. They cover model and agent spans, tool execution, token usage, duration metrics, exceptions, input and output events, and evaluation results using OpenTelemetry signals.
+
+The GenAI conventions are currently marked as development. Implementations should pin the emitted convention version and expect changes before the specification reaches stable status. Prompt content, responses, tool arguments, and tool results may contain sensitive data and should not be captured by default without an explicit privacy policy.
+
+- Spec: [OpenTelemetry — Semantic conventions for generative AI systems](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md)
+- Project: [OpenTelemetry GenAI Semantic Conventions](https://github.com/open-telemetry/semantic-conventions-genai)
+
+### OpenInference Semantic Conventions
+
+OpenInference defines OpenTelemetry-compatible attributes and span kinds for AI applications. Its semantic conventions cover LLM calls, embeddings, chains, agents, tools, retrievers, rerankers, guardrails, evaluators, and prompts, with instrumentations for multiple model SDKs and agent frameworks.
+
+OpenInference traces can be exported to OpenTelemetry-compatible backends. Its content-capture controls can hide inputs, outputs, invocation parameters, and tool definitions when telemetry would otherwise expose sensitive or oversized payloads.
+
+- Spec: [OpenInference — Semantic Conventions](https://arize-ai.github.io/openinference/spec/semantic_conventions.html)
+- Project: [Arize AI — OpenInference](https://github.com/Arize-ai/openinference)
+- Configuration: [OpenInference — Configuration](https://arize-ai.github.io/openinference/spec/configuration.html)
+
+---
+
 ## Web and LLM discoverability
 
 ### llms.txt
@@ -252,12 +281,25 @@ MCP defines a standard interface between an LLM host (Claude, Cursor, VS Code, e
 - Docs: [platform.claude.com — MCP](https://platform.claude.com/docs/en/build-with-claude/mcp)
 - Servers list: [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
 
-### Agent Cards
+### Agent2Agent Protocol (A2A)
 
-A proposed standard for agents to expose their identity, capabilities, and trust level to other agents in multi-agent systems. Part of the broader push for agent interoperability. Referenced in the A2A (Agent-to-Agent) protocol from Google.
+Agent2Agent Protocol is an open protocol for communication between independent agentic applications. It defines discovery through Agent Cards, task lifecycle management, messages, artifacts, streaming, and extension negotiation without requiring agents to expose their internal memory or tools.
 
-- Spec: [Google A2A](https://google.github.io/A2A/)
-- Survey: [arxiv — Agent interoperability protocols](https://arxiv.org/abs/2505.01234)
+A2A is hosted by the Linux Foundation and has implementations across multiple cloud and agent ecosystems. It complements MCP: MCP connects a model host or agent to tools and data, while A2A coordinates work between agents.
+
+- Spec: [A2A Protocol specification](https://a2a-protocol.org/latest/specification/)
+- Project: [A2A Protocol](https://a2a-protocol.org/latest/)
+- Governance: [Linux Foundation — Agent2Agent project](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents)
+
+### Agent Client Protocol (ACP)
+
+Agent Client Protocol is an open JSON-RPC protocol between coding agents and editors or other client interfaces. It standardizes session setup, prompts, streaming updates, tool calls, file changes, terminal output, and capability negotiation so an agent can work across compatible clients.
+
+ACP occupies a different boundary from MCP and A2A: ACP connects a client to a coding agent, MCP connects an agent to tools and data, and A2A connects independent agents. Zed and JetBrains jointly develop the protocol, with implementations for multiple editors and agents.
+
+- Spec: [Agent Client Protocol](https://agentclientprotocol.com/protocol/overview)
+- Project: [Zed — Agent Client Protocol](https://zed.dev/acp)
+- Adoption: [JetBrains — Agent Client Protocol](https://www.jetbrains.com/acp/)
 
 ---
 

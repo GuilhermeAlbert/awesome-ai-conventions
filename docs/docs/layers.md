@@ -15,9 +15,13 @@ AI conventions are easier to reason about when grouped by the role they play in 
 | Preserve long-lived project context | `MEMORY.md` or Memory Bank | These files keep stable knowledge and task state outside a single chat. |
 | Package a reusable agent capability | `SKILL.md` | Skills are loaded on demand when a task matches the description. |
 | Store prompts as versioned assets | `.prompty`, `.prompt`, or `system_prompt.txt` | Prompt files keep model instructions inspectable and reviewable. |
+| Restrict files or stage risky work | `.aiignore`, scoped rules, and `PLAN.md` | Guardrails reduce accidental reads, writes, and unreviewed execution. |
 | Make behavior measurable | `EVAL.yaml` | Evals turn agent quality into a repeatable check. |
+| Trace agent execution | OpenTelemetry GenAI or OpenInference | Semantic conventions make model, agent, and tool telemetry comparable. |
 | Help LLMs discover public docs | `llms.txt` and `llms-full.txt` | Predictable Markdown entry points reduce scraping ambiguity. |
-| Connect models to tools or agents | MCP, A2A, Agent Cards | Protocols define interoperability beyond one repository. |
+| Connect an agent to tools and data | MCP | MCP standardizes the agent-to-tool boundary. |
+| Connect independent agents | A2A | A2A standardizes discovery and task exchange between agents. |
+| Connect a coding agent to an editor | ACP | ACP standardizes the client-to-agent boundary. |
 
 ## Instruction Layer
 
@@ -45,11 +49,26 @@ These files package model instructions and agent capabilities into reusable asse
 - `system_prompt.txt`
 - `SKILL.md`
 
+## Execution and Safety Layer
+
+Runtime loops, authorization checks, budgets, retries, and output validation are usually implemented by the agent host. Repository conventions can influence these controls but do not implement the runtime by themselves.
+
+- `.aiignore`
+- `PLAN.md`
+- Tool-specific scoped rules
+
 ## Evaluation Layer
 
 These files make behavior testable and repeatable.
 
 - `EVAL.yaml`
+
+## Observability Layer
+
+These semantic conventions describe agent runs as traces, spans, metrics, and events.
+
+- OpenTelemetry GenAI Semantic Conventions
+- OpenInference Semantic Conventions
 
 ## Discoverability Layer
 
@@ -61,9 +80,10 @@ These files expose structured information to LLMs and API-aware clients.
 - `auth.md`
 - `/.well-known/ai-plugin.json`
 
-## Protocol Layer
+## Interoperability Layer
 
-These standards define interoperability between tools, models, and agents.
+These standards define interoperability across different harness boundaries.
 
-- Model Context Protocol
-- Agent Cards / A2A
+- Model Context Protocol for agents, tools, and data
+- Agent2Agent Protocol for independent agents
+- Agent Client Protocol for coding agents and editor clients
