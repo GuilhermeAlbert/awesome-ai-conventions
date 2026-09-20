@@ -300,7 +300,7 @@ ACP occupies a different boundary from MCP and A2A: ACP connects a client to a c
 
 ## Examples
 
-Minimal example files for every convention in this list live in [examples/](examples/README.md). Each folder uses a stable slug and contains the file path a project would normally place in its own repository or service.
+Minimal example files for every convention in this list live in [examples/](examples/README.md). Each folder uses a stable slug and contains the file path a project would normally place in its own repository or service. To refresh the generated docs, run `npm run generate` from `docs/`.
 
 ---
 
