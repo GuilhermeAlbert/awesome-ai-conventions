@@ -49,12 +49,12 @@ This registry tracks the files, formats, and protocols that agents use to read p
 
 Each entry has a kind and a maturity status.
 
-| Kind | Meaning |
-| --- | --- |
-| Standard | A published specification with defined structure or behavior. |
-| Protocol | A specification for communication or interoperability. |
-| Convention | An adopted practice without a formal standards process. |
-| Emerging | A recent proposal or pattern whose adoption is still developing. |
+| Kind       | Meaning                                                                       |
+| ---------- | ----------------------------------------------------------------------------- |
+| Standard   | A published specification with defined structure or behavior.                 |
+| Protocol   | A specification for communication or interoperability.                        |
+| Convention | An adopted practice without a formal standards process.                       |
+| Emerging   | A recent proposal or pattern whose adoption is still developing.              |
 
 The documentation tracks maturity separately as accepted, candidate, watchlist, legacy, or deprecated. Inclusion records evidence and adoption. It is not an endorsement.
 
