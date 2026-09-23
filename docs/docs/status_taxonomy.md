@@ -9,6 +9,8 @@ sidebar_position: 6
 
 Useful patterns mature at different rates. The registry separates established conventions from candidates and legacy artifacts.
 
+Kind and maturity answer different questions. `Standard`, `Protocol`, `Convention`, and `Emerging` describe what an entry is. The statuses on this page describe how much evidence and stability it has.
+
 ## Accepted
 
 Use `accepted` for conventions that are stable enough to list in the main README.

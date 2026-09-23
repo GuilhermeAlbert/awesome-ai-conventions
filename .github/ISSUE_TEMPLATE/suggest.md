@@ -14,6 +14,11 @@ assignees: ""
 
 <!-- One or two sentences. What problem does it solve? Who uses it? -->
 
+## Classification
+
+- Kind: Standard / Protocol / Convention / Emerging
+- Maturity: Accepted / Candidate / Watchlist / Legacy / Deprecated
+
 ## Evidence of adoption
 
 <!-- Links to at least two independent teams or tools using this in production -->

@@ -2,6 +2,11 @@
 
 <!-- One sentence describing the entry or correction. -->
 
+## Classification
+
+- Kind: Standard / Protocol / Convention / Emerging
+- Maturity: Accepted / Candidate / Watchlist / Legacy / Deprecated
+
 ## Checklist
 
 For new entries:

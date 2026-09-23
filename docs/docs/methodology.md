@@ -9,6 +9,8 @@ sidebar_position: 5
 
 The registry is a curated map of conventions, not an index of every AI-related file name. Each entry should be useful to teams deciding whether to adopt a convention in a real project.
 
+Kind and maturity answer different questions. `Standard`, `Protocol`, `Convention`, and `Emerging` describe what an entry is. The status records how much evidence and stability it has.
+
 ## Inclusion Criteria
 
 A convention belongs in the registry when it meets all of these conditions:
@@ -44,6 +46,8 @@ Use evidence to keep descriptions factual:
 Each entry should answer:
 
 - What is it?
+- What kind is it?
+- What is its maturity status?
 - Where does it live?
 - Who reads or writes it?
 - What problem does it solve?
@@ -71,4 +75,3 @@ Remove or demote an entry when:
 - A broader or more accurate convention replaces it.
 
 When removal is ambiguous, mark the item as candidate or legacy first and explain the open question.
-

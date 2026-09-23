@@ -4,11 +4,24 @@ Thank you for considering a contribution. This curated registry uses a deliberat
 
 ## Criteria for inclusion
 
-A convention belongs here if it meets all three conditions:
+An accepted entry belongs in the main README if it meets all three conditions:
 
 1. **Adopted by more than one team or tool in production.** A spec draft or personal project does not qualify. There must be observable, independent adoption.
 2. **Has a public spec, docs, or canonical reference.** A GitHub repo, published doc site, or archived proposal counts. A blog post alone does not.
 3. **Is a file-based convention or open protocol.** The entry must describe a file format, filename convention, or communication protocol.
+
+Emerging entries may live in the documentation when they have a public source and a concrete question for maintainers to review. They do not need to meet the adoption bar for the main README.
+
+## Classifying an entry
+
+Choose the kind that describes the entry itself:
+
+- `Standard` for a published specification with defined structure or behavior.
+- `Protocol` for communication or interoperability rules.
+- `Convention` for an adopted practice without a formal standards process.
+- `Emerging` for a public proposal or pattern that still needs adoption evidence.
+
+Kind and maturity are separate. The documentation uses `accepted`, `candidate`, `watchlist`, `legacy`, and `deprecated` to record maturity.
 
 ## How to open a PR
 
