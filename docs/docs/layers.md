@@ -5,13 +5,13 @@ sidebar_position: 3
 
 # Layers
 
-AI conventions are easier to reason about when grouped by the role they play in an agent workflow. Use this map to decide which artifact belongs in a repository, docs site, or integration surface.
+Agent standards and conventions are easier to compare when grouped by the role they play in an agent workflow. Use this map to decide which artifact belongs in a repository, docs site, or integration surface.
 
 ## Quick Decision Map
 
 | Need | Start with | Why |
 | --- | --- | --- |
-| Tell coding agents how to work in a repository | `AGENTS.md` | Cross-tool project instructions are the highest-leverage baseline. |
+| Tell coding agents how to work in a repository | `AGENTS.md` | Cross-tool project instructions are the most useful baseline. |
 | Preserve long-lived project context | `MEMORY.md` or Memory Bank | These files keep stable knowledge and task state outside a single chat. |
 | Package a reusable agent capability | `SKILL.md` | Skills are loaded on demand when a task matches the description. |
 | Store prompts as versioned assets | `.prompty`, `.prompt`, or `system_prompt.txt` | Prompt files keep model instructions inspectable and reviewable. |
@@ -29,6 +29,7 @@ These files tell agents how to behave in a repository.
 
 - `AGENTS.md`
 - `CLAUDE.md`
+- `GEMINI.md`
 - Tool-specific rules such as Cursor rules, Cline rules, and Copilot instructions
 - `.aiignore`
 

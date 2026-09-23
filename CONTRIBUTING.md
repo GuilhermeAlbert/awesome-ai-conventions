@@ -1,14 +1,27 @@
 # Contributing
 
-Thank you for considering a contribution. This list is a curated registry, not an exhaustive index. The bar for inclusion is intentional.
+Thank you for considering a contribution. This curated registry uses a deliberate inclusion bar.
 
 ## Criteria for inclusion
 
-A convention belongs here if it meets all three conditions:
+An accepted entry belongs in the main README if it meets all three conditions:
 
 1. **Adopted by more than one team or tool in production.** A spec draft or personal project does not qualify. There must be observable, independent adoption.
 2. **Has a public spec, docs, or canonical reference.** A GitHub repo, published doc site, or archived proposal counts. A blog post alone does not.
-3. **Is a file-based convention or open protocol.** The subject of the entry is a file format, a filename convention, or a communication protocol — not a framework, tool, or product.
+3. **Is a file-based convention or open protocol.** The entry must describe a file format, filename convention, or communication protocol.
+
+Emerging entries may live in the documentation when they have a public source and a concrete question for maintainers to review. They do not need to meet the adoption bar for the main README.
+
+## Classifying an entry
+
+Choose the kind that describes the entry itself:
+
+- `Standard` for a published specification with defined structure or behavior.
+- `Protocol` for communication or interoperability rules.
+- `Convention` for an adopted practice without a formal standards process.
+- `Emerging` for a public proposal or pattern that still needs adoption evidence.
+
+Kind and maturity are separate. The documentation uses `accepted`, `candidate`, `watchlist`, `legacy`, and `deprecated` to record maturity.
 
 ## How to open a PR
 
@@ -31,11 +44,11 @@ If you are unsure which section fits, explain your reasoning in the PR descripti
 
 Descriptions in this list are factual and direct.
 
-- Say what the convention does, not how great it is.
+- Describe what the convention does with facts and examples.
 - Avoid adjectives that carry no information: "powerful," "seamless," "elegant," "robust," "game-changing."
 - Avoid phrases that substitute for evidence: "rapidly adopted," "industry standard," "everyone uses."
 - Use present tense.
-- Prefer specifics over generalities. Instead of "tells agents what to do," write "documents build commands, coding conventions, and which files the agent must not modify."
+- Prefer specifics over generalities. Replace "tells agents what to do" with details such as build commands, coding conventions, and files the agent must not modify.
 
 A description that reads like marketing copy will be asked to rewrite before merge.
 

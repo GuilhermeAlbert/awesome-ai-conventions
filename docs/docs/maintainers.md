@@ -7,7 +7,7 @@ sidebar_position: 7
 
 > Gives repository maintainers a practical path for making projects easier for AI agents to understand.
 
-Agent-ready documentation is not about adding every convention. It is about making the important project facts easy to find, verify, and update.
+Agent-ready documentation makes important project facts easy to find, verify, and update. Most repositories need only a small set of conventions.
 
 ## Baseline Checklist
 
@@ -53,4 +53,3 @@ Use `EVAL.yaml` when agent behavior must be measured repeatedly, especially in p
 - Link to canonical docs instead of copying long specs.
 - Remove stale rules when tools or workflows change.
 - Treat convention files as reviewed project documentation, not generated chat output.
-

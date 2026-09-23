@@ -2,13 +2,18 @@
 
 <!-- One sentence describing the entry or correction. -->
 
+## Classification
+
+- Kind: Standard / Protocol / Convention / Emerging
+- Maturity: Accepted / Candidate / Watchlist / Legacy / Deprecated
+
 ## Checklist
 
 For new entries:
 
 - [ ] Adopted by more than one team or tool in production (link evidence below)
 - [ ] Has a public spec, official docs, or canonical repo
-- [ ] Is a file format, filename convention, or open protocol — not a framework or hosted product
+- [ ] Describes a file format, filename convention, or open protocol
 - [ ] Description is factual prose, no marketing language
 - [ ] Primary source link is listed first
 

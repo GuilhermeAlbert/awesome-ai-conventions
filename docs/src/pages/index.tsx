@@ -28,18 +28,18 @@ const featureCards = [
 export default function Home(): JSX.Element {
   return (
     <Layout
-      title="Awesome AI Conventions"
-      description="A curated list of emerging conventions, file standards, and protocols for building with AI agents.">
+      title="Awesome Agent Standards"
+      description="A curated index of standards, protocols, conventions, and emerging patterns for AI agents.">
       <main>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
-            <p className={styles.eyebrow}>Curated registry for agent-ready projects</p>
+            <p className={styles.eyebrow}>Curated index for AI agents</p>
             <Heading as="h1" className={styles.heroTitle}>
-              Awesome AI Conventions
+              Awesome Agent Standards
             </Heading>
             <p className={styles.heroLead}>
-              File-based conventions and open protocols that help humans,
-              codebases, and AI agents communicate with less guesswork.
+              Standards, protocols, conventions, and emerging patterns for
+              building agents that work across tools and repositories.
             </p>
             <div className={styles.heroActions}>
               <Link className="button button--primary button--lg" to="/docs/intro">
@@ -55,7 +55,7 @@ export default function Home(): JSX.Element {
         <section className={styles.metrics} aria-label="Project coverage">
           <div>
             <strong>10+</strong>
-            <span>convention families</span>
+            <span>registry families</span>
           </div>
           <div>
             <strong>20+</strong>

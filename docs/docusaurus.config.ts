@@ -2,14 +2,14 @@ import type {Config} from '@docusaurus/types';
 import type {Preset} from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Awesome AI Conventions',
-  tagline: 'File-based conventions and open protocols for building with AI agents.',
+  title: 'Awesome Agent Standards',
+  tagline: 'Standards, protocols, conventions, and emerging patterns for AI agents.',
   favicon: 'img/logo.svg',
 
   url: 'https://guilhermealbert.github.io',
-  baseUrl: '/awesome-ai-conventions/',
+  baseUrl: '/awesome-agent-standards/',
   organizationName: 'guilhermealbert',
-  projectName: 'awesome-ai-conventions',
+  projectName: 'awesome-agent-standards',
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
@@ -32,7 +32,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'docs',
           editUrl:
-            'https://github.com/guilhermealbert/awesome-ai-conventions/tree/main/docs/',
+            'https://github.com/guilhermealbert/awesome-agent-standards/tree/main/docs/',
         },
         blog: false,
         theme: {
@@ -58,9 +58,9 @@ const config: Config = {
   themeConfig: {
     image: 'img/logo.svg',
     navbar: {
-      title: 'Awesome AI Conventions',
+      title: 'Awesome Agent Standards',
       logo: {
-        alt: 'Awesome AI Conventions',
+        alt: 'Awesome Agent Standards',
         src: 'img/logo.svg',
       },
       items: [
@@ -76,7 +76,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/guilhermealbert/awesome-ai-conventions',
+          href: 'https://github.com/guilhermealbert/awesome-agent-standards',
           label: 'GitHub',
           position: 'right',
         },
@@ -107,16 +107,16 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/guilhermealbert/awesome-ai-conventions',
+              href: 'https://github.com/guilhermealbert/awesome-agent-standards',
             },
             {
               label: 'Contributing',
-              href: 'https://github.com/guilhermealbert/awesome-ai-conventions/blob/main/CONTRIBUTING.md',
+              href: 'https://github.com/guilhermealbert/awesome-agent-standards/blob/main/CONTRIBUTING.md',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Awesome AI Conventions. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Awesome Agent Standards. Built with Docusaurus.`,
     },
     colorMode: {
       defaultMode: 'light',
@@ -129,7 +129,7 @@ const config: Config = {
       {
         name: 'description',
         content:
-          'A curated list of emerging conventions, file standards, and protocols for building with AI agents.',
+          'A curated index of standards, protocols, conventions, and emerging patterns for AI agents.',
       },
     ],
   } satisfies Preset.ThemeConfig,

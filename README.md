@@ -1,16 +1,18 @@
-# Awesome AI Conventions [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Agent Standards [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of conventions, file standards, and protocols for building with AI agents.
+> A curated index of standards, protocols, conventions, and emerging patterns for AI agents.
 
-This registry tracks **file-based conventions and open protocols** used by humans, codebases, and AI agents to exchange context and coordinate work.
+This registry tracks the files, formats, and protocols that agents use to read project context, share capabilities, coordinate work, and interact with tools.
 
 ---
 
 ## Contents
 
+- [Classification](#classification)
 - [Project-level context files](#project-level-context-files)
   - [AGENTS.md](#agentsmd)
   - [CLAUDE.md](#claudemd)
+  - [GEMINI.md](#geminimd)
   - [MEMORY.md](#memorymd)
   - [Cursor, Cline, and GitHub Copilot instruction files](#cursor-cline-and-github-copilot-instruction-files)
   - [.aiignore](#aiignore)
@@ -43,18 +45,37 @@ This registry tracks **file-based conventions and open protocols** used by human
 
 ---
 
+## Classification
+
+Each entry has a kind and a maturity status.
+
+| Kind       | Meaning                                                                       |
+| ---------- | ----------------------------------------------------------------------------- |
+| Standard   | A published specification with defined structure or behavior.                 |
+| Protocol   | A specification for communication or interoperability.                        |
+| Convention | An adopted practice without a formal standards process.                       |
+| Emerging   | A recent proposal or pattern whose adoption is still developing.              |
+
+The documentation tracks maturity separately as accepted, candidate, watchlist, legacy, or deprecated. Inclusion records evidence and adoption. It is not an endorsement.
+
+---
+
 ## Project-level context files
 
 These files live in a repository root and tell AI coding agents how to behave in that project. Think of them as a README written for agents.
 
 ### AGENTS.md
 
-The cross-tool standard for agent context. The [Agentic AI Foundation](https://aaif.org), part of the Linux Foundation, maintains it after OpenAI donated the project in December 2025 alongside Anthropic's MCP and Block's Goose. Claude Code, Cursor, Copilot, Gemini CLI, and other agents can all read the same file.
+The cross-tool standard for agent context. The [Agentic AI Foundation](https://aaif.org), part of the Linux Foundation, maintains it after OpenAI donated the project in December 2025 alongside Anthropic's MCP and Block's Goose. Claude Code, Cursor, Copilot, Gemini CLI, and other agents can read the same file.
 
 A typical AGENTS.md documents build commands, coding conventions, PR rules, and what the agent must not touch. In monorepos, each subdirectory can have its own AGENTS.md that inherits from the root. Agents read the nearest file in the directory tree.
 
+Claude Code added `AGENTS.md` support in version 2.1.277. When a project has no `CLAUDE.md`, Claude Code reads `AGENTS.md` as its project instructions. Anthropic notes that this fallback is not yet available on Bedrock, Vertex, or Foundry.
+
 - Spec: [GitHub: agentic-ai/AGENTS.md](https://github.com/agentic-ai/AGENTS.md)
 - Guide: [devtk.ai: What is AGENTS.md](https://devtk.ai/en/blog/what-is-agents-md-guide/)
+- Adoption: [Claude Code 2.1.277 changelog](https://code.claude.com/docs/en/changelog#2-1-277)
+- Adoption: [GitHub Copilot repository instructions](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions-in-your-ide/add-repository-instructions-in-your-ide)
 
 ### CLAUDE.md
 
@@ -65,6 +86,15 @@ CLAUDE.md is Claude-specific. For multi-tool teams, the common pattern is to mak
 - Docs: [Anthropic: Customize your setup](https://www.anthropic.com/engineering/claude-code-best-practices)
 - Guide: [mindstudio.ai: What is CLAUDE.md](https://www.mindstudio.ai/blog/what-is-claude-md-file-permanent-instruction-manual)
 - Research: [arxiv.org: Agentic Coding Manifests study](https://arxiv.org/html/2509.14744v1) (253 CLAUDE.md files analyzed)
+
+### GEMINI.md
+
+Gemini CLI's default project context file. It can hold project instructions, coding conventions, and domain context. Gemini CLI loads these files hierarchically from global, workspace, and subdirectory locations, and supports `@file.md` imports for splitting instructions across files.
+
+GitHub Copilot's cloud agent and CLI also recognize `GEMINI.md`. Gemini CLI can be configured to look for additional filenames, including `AGENTS.md`, through `context.fileName`.
+
+- Docs: [Gemini CLI: Provide context with GEMINI.md files](https://geminicli.com/docs/cli/gemini-md/)
+- Adoption: [GitHub Copilot custom instruction support](https://docs.github.com/en/copilot/reference/custom-instructions-support)
 
 ### MEMORY.md
 

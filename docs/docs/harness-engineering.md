@@ -9,7 +9,7 @@ sidebar_position: 4
 
 ## Model Versus Harness
 
-A model generates outputs from the context it receives. A harness decides what context reaches the model, which actions are available, how actions are authorized and executed, when execution stops, and how results are checked. Instruction files and skills are part of that system, but they are not the whole system.
+A model generates outputs from the context it receives. A harness decides what context reaches the model, which actions are available, how actions are authorized and executed, when execution stops, and how results are checked. Instruction files and skills cover part of that system.
 
 It is useful to separate two boundaries:
 
@@ -33,13 +33,13 @@ The exact boundary varies by tool. Document observable controls and public inter
 
 ## Context Assembly
 
-Context is a selected working set, not every file or memory available. A harness may draw from:
+A harness selects a working set from the files and memory available. It may draw from:
 
 - **Procedural context:** instructions, rules, skills, and playbooks that describe how to work.
 - **Semantic context:** durable facts about the project, domain, or user preferences.
 - **Episodic context:** relevant events and outcomes from earlier tasks or sessions.
 
-Not every agent implements all three memory categories. Prefer explicit, reviewable project files for facts that must be portable across tools, and retrieve only what helps the current task.
+Agents vary in how many of these memory categories they implement. Prefer explicit, reviewable project files for facts that must be portable across tools, and retrieve only what helps the current task.
 
 ## The Tool Loop
 
@@ -67,7 +67,7 @@ A Markdown rule can express policy, but enforcement belongs in the runtime or to
 
 ## Evaluation and Observability
 
-Evaluation asks whether the harness produced an acceptable result. Observability explains what happened during the run. They work together but are not interchangeable.
+Evaluation asks whether the harness produced an acceptable result. Observability explains what happened during the run. Each answers a different question.
 
 Useful measurements include completion rate, tool failures, retries, latency, token usage, estimated cost, policy denials, evaluator scores, and the stage where a task became blocked. Trace content can include sensitive prompts, responses, retrieved documents, and tool payloads; capture only what is needed, apply redaction, and define retention before enabling content-level telemetry.
 
