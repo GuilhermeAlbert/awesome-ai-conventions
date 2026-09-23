@@ -8,6 +8,7 @@ Each folder uses a stable slug instead of repeating filenames in the directory n
 
 - [AGENTS.md](agents-md/AGENTS.md)
 - [CLAUDE.md](claude-md/CLAUDE.md)
+- [GEMINI.md](gemini-md/GEMINI.md)
 - [MEMORY.md](memory-md/MEMORY.md)
 - [Tool-specific rules](tool-specific-rules/)
   - [.cursor/rules/project.mdc](tool-specific-rules/.cursor/rules/project.mdc)

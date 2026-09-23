@@ -5,9 +5,9 @@ sidebar_position: 2
 
 # Awesome AI Conventions [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of emerging conventions, file standards, and protocols for building with AI agents.
+> A curated list of conventions, file standards, and protocols for building with AI agents.
 
-This is a living registry of patterns the industry is converging on. Not frameworks, not tools — **file-based conventions and open protocols** that define how humans, codebases, and AI agents communicate with each other.
+This registry tracks **file-based conventions and open protocols** used by humans, codebases, and AI agents to exchange context and coordinate work.
 
 ---
 
@@ -16,6 +16,7 @@ This is a living registry of patterns the industry is converging on. Not framewo
 - [Project-level context files](#project-level-context-files)
   - [AGENTS.md](#agentsmd)
   - [CLAUDE.md](#claudemd)
+  - [GEMINI.md](#geminimd)
   - [MEMORY.md](#memorymd)
   - [Cursor, Cline, and GitHub Copilot instruction files](#cursor-cline-and-github-copilot-instruction-files)
   - [.aiignore](#aiignore)
@@ -50,16 +51,20 @@ This is a living registry of patterns the industry is converging on. Not framewo
 
 ## Project-level context files
 
-These files live in a repository root and tell AI coding agents how to behave in that specific project. They are the "README for AI" — not for humans, but for agents.
+These files live in a repository root and tell AI coding agents how to behave in that project. Think of them as a README written for agents.
 
 ### AGENTS.md
 
-The cross-tool standard for agent context. Maintained by the [Agentic AI Foundation](https://aaif.org) under the Linux Foundation (donated by OpenAI in December 2025 alongside Anthropic's MCP and Block's Goose). The pitch is one file readable by any agent: Claude Code, Cursor, Copilot, Gemini CLI, and others.
+The cross-tool standard for agent context. The [Agentic AI Foundation](https://aaif.org), part of the Linux Foundation, maintains it after OpenAI donated the project in December 2025 alongside Anthropic's MCP and Block's Goose. Claude Code, Cursor, Copilot, Gemini CLI, and other agents can read the same file.
 
 A typical AGENTS.md documents build commands, coding conventions, PR rules, and what the agent must not touch. In monorepos, each subdirectory can have its own AGENTS.md that inherits from the root. Agents read the nearest file in the directory tree.
 
+Claude Code added `AGENTS.md` support in version 2.1.277. When a project has no `CLAUDE.md`, Claude Code reads `AGENTS.md` as its project instructions. Anthropic notes that this fallback is not yet available on Bedrock, Vertex, or Foundry.
+
 - Spec: [GitHub: agentic-ai/AGENTS.md](https://github.com/agentic-ai/AGENTS.md)
-- Guide: [devtk.ai — What is AGENTS.md](https://devtk.ai/en/blog/what-is-agents-md-guide/)
+- Guide: [devtk.ai: What is AGENTS.md](https://devtk.ai/en/blog/what-is-agents-md-guide/)
+- Adoption: [Claude Code 2.1.277 changelog](https://code.claude.com/docs/en/changelog#2-1-277)
+- Adoption: [GitHub Copilot repository instructions](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions-in-your-ide/add-repository-instructions-in-your-ide)
 
 ### CLAUDE.md
 
@@ -67,15 +72,24 @@ Claude Code's native memory file. Loaded automatically before every session. Any
 
 CLAUDE.md is Claude-specific. For multi-tool teams, the common pattern is to make it a symlink to AGENTS.md: `CLAUDE.md → AGENTS.md`.
 
-- Docs: [Anthropic — Customize your setup](https://www.anthropic.com/engineering/claude-code-best-practices)
-- Guide: [mindstudio.ai — What is CLAUDE.md](https://www.mindstudio.ai/blog/what-is-claude-md-file-permanent-instruction-manual)
-- Research: [arxiv.org — Agentic Coding Manifests study](https://arxiv.org/html/2509.14744v1) (253 CLAUDE.md files analyzed)
+- Docs: [Anthropic: Customize your setup](https://www.anthropic.com/engineering/claude-code-best-practices)
+- Guide: [mindstudio.ai: What is CLAUDE.md](https://www.mindstudio.ai/blog/what-is-claude-md-file-permanent-instruction-manual)
+- Research: [arxiv.org: Agentic Coding Manifests study](https://arxiv.org/html/2509.14744v1) (253 CLAUDE.md files analyzed)
+
+### GEMINI.md
+
+Gemini CLI's default project context file. It can hold project instructions, coding conventions, and domain context. Gemini CLI loads these files hierarchically from global, workspace, and subdirectory locations, and supports `@file.md` imports for splitting instructions across files.
+
+GitHub Copilot's cloud agent and CLI also recognize `GEMINI.md`. Gemini CLI can be configured to look for additional filenames, including `AGENTS.md`, through `context.fileName`.
+
+- Docs: [Gemini CLI: Provide context with GEMINI.md files](https://geminicli.com/docs/cli/gemini-md/)
+- Adoption: [GitHub Copilot custom instruction support](https://docs.github.com/en/copilot/reference/custom-instructions-support)
 
 ### MEMORY.md
 
 Claude Code's auto-memory file. Written by the agent, not the human. When Claude learns something about your codebase mid-session, it can persist that knowledge here. On next session, the index loads automatically; topic files load on demand. Complements CLAUDE.md: you write the instructions, the agent writes the learnings.
 
-- Guide: [Medium — AI Agent Memory Files](https://medium.com/data-science-collective/the-complete-guide-to-ai-agent-memory-files-claudemd-agentsmd-and-beyond-49ea0df5c5a9)
+- Guide: [Medium: AI Agent Memory Files](https://medium.com/data-science-collective/the-complete-guide-to-ai-agent-memory-files-claudemd-agentsmd-and-beyond-49ea0df5c5a9)
 
 ### Cursor, Cline, and GitHub Copilot instruction files
 
@@ -86,13 +100,13 @@ Tool-specific equivalents. Cursor uses YAML-frontmatter scoped rules by glob pat
 
 ### .aiignore
 
-Tells AI agents which files and folders to skip — analogous to `.gitignore`. JetBrains Junie adopted this pattern. Prevents agents from reading sensitive config files, large binaries, or generated code you don't want touched.
+Tells AI agents which files and folders to skip, much like `.gitignore`. JetBrains Junie adopted this pattern. It can keep sensitive configuration, large binaries, and generated code outside the agent's context.
 
-- Reference: [jetbrains.com — aiignore](https://www.jetbrains.com/help/junie/aiignore.html)
+- Reference: [jetbrains.com: aiignore](https://www.jetbrains.com/help/junie/aiignore.html)
 
 ### Memory Bank (`cline_docs/` or `.roo/`)
 
-A project state architecture popularized by open-source agents like [Cline](https://github.com/cline/cline) and [Roo Code](https://github.com/RooVetGit/Roo-Code). Instead of a single static file, the agent maintains a directory of Markdown files (e.g., `activeContext.md`, `productContext.md`, `systemArchitecture.md`). This allows the agent to document and update its own contextual state as the project evolves across long-living sessions.
+A project state architecture popularized by open-source agents like [Cline](https://github.com/cline/cline) and [Roo Code](https://github.com/RooVetGit/Roo-Code). The agent maintains context across several Markdown files, such as `activeContext.md`, `productContext.md`, and `systemArchitecture.md`. It updates those files as the project changes across long-running sessions.
 
 ---
 
@@ -106,7 +120,7 @@ A Markdown implementation plan generated or maintained by an agent before code c
 
 OpenHands documents this pattern in its Planning Mode: a planning agent writes a structured `PLAN.md` in the workspace, then an execution agent reads that file to implement the plan. The convention is still less universal than `AGENTS.md`, but it is a concrete file artifact used by agentic coding workflows.
 
-- Docs: [OpenHands — Creating Custom Agent](https://docs.openhands.dev/sdk/guides/agent-custom)
+- Docs: [OpenHands: Creating Custom Agent](https://docs.openhands.dev/sdk/guides/agent-custom)
 - Product note: [OpenHands Planning Mode Beta](https://openhands.dev/blog/openhands-product-update---march-2026)
 
 ---
@@ -133,11 +147,11 @@ A more informal but widespread convention across various LLM CLIs and custom too
 
 ## Agent skill files
 
-Skills are modular, on-demand capability files. Instead of loading all context upfront, an agent reads a skill file only when the task matches its description. The format has converged into an open standard.
+Skills are modular, on-demand capability files. An agent reads the relevant skill only when a task matches its description, which keeps unrelated instructions out of the context window. The format has converged into an open standard.
 
 ### SKILL.md
 
-A markdown file with a YAML frontmatter header (`name`, `description`, `tools`, triggers) and a structured body with workflows, checklists, and output templates. The agent reads it from the filesystem on demand — it never enters the context window unless triggered.
+A Markdown file with a YAML frontmatter header (`name`, `description`, `tools`, triggers) and a body containing workflows, checklists, and output templates. The agent reads the file only when the task triggers it.
 
 Published by Anthropic as an open standard in December 2025. OpenAI adopted the same format for Codex CLI and ChatGPT in the same period. GitHub Copilot followed in December 2025, reading skills from `.github/skills/`.
 
@@ -147,13 +161,13 @@ Standard install locations:
 | -------------- | ------------------- | ----------------- |
 | Claude Code    | `~/.claude/skills/` | `.claude/skills/` |
 | Codex CLI      | `~/.codex/skills/`  | `.codex/skills/`  |
-| GitHub Copilot | —                   | `.github/skills/` |
+| GitHub Copilot | Not supported       | `.github/skills/` |
 
 For teams using multiple agents, the symlink pattern keeps a canonical `.skills/` directory and links each agent to it.
 
 - Spec: [agentskills.io](https://agentskills.io)
-- Docs: [platform.claude.com — Agent Skills overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
-- Docs: [platform.claude.com — Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
+- Docs: [platform.claude.com: Agent Skills overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+- Docs: [platform.claude.com: Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
 - Community repos: [skillmatic-ai/awesome-agent-skills](https://github.com/skillmatic-ai/awesome-agent-skills), [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)
 
 ### skills.sh
@@ -178,8 +192,8 @@ A markdown file placed in the project root that defines a project's visual desig
 
 Google Stitch documents DESIGN.md as the design counterpart to AGENTS.md: a plain-text artifact that agents can read, edit, and apply when generating consistent screens. The format allows unknown sections and custom tokens, so teams can extend it for domain-specific design rules.
 
-- Spec: [Stitch — DESIGN.md specification](https://stitch.withgoogle.com/docs/design-md/specification)
-- Docs: [Stitch — What is DESIGN.md?](https://stitch.withgoogle.com/docs/design-md/overview)
+- Spec: [Stitch: DESIGN.md specification](https://stitch.withgoogle.com/docs/design-md/specification)
+- Docs: [Stitch: What is DESIGN.md?](https://stitch.withgoogle.com/docs/design-md/overview)
 - Repo: [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
 - Directory: [getdesign.md](https://getdesign.md)
 
@@ -211,7 +225,7 @@ The OpenTelemetry GenAI Semantic Conventions define common telemetry for generat
 
 The GenAI conventions are currently marked as development. Implementations should pin the emitted convention version and expect changes before the specification reaches stable status. Prompt content, responses, tool arguments, and tool results may contain sensitive data and should not be captured by default without an explicit privacy policy.
 
-- Spec: [OpenTelemetry — Semantic conventions for generative AI systems](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md)
+- Spec: [OpenTelemetry: Semantic conventions for generative AI systems](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md)
 - Project: [OpenTelemetry GenAI Semantic Conventions](https://github.com/open-telemetry/semantic-conventions-genai)
 
 ### OpenInference Semantic Conventions
@@ -220,9 +234,9 @@ OpenInference defines OpenTelemetry-compatible attributes and span kinds for AI 
 
 OpenInference traces can be exported to OpenTelemetry-compatible backends. Its content-capture controls can hide inputs, outputs, invocation parameters, and tool definitions when telemetry would otherwise expose sensitive or oversized payloads.
 
-- Spec: [OpenInference — Semantic Conventions](https://arize-ai.github.io/openinference/spec/semantic_conventions.html)
-- Project: [Arize AI — OpenInference](https://github.com/Arize-ai/openinference)
-- Configuration: [OpenInference — Configuration](https://arize-ai.github.io/openinference/spec/configuration.html)
+- Spec: [OpenInference: Semantic Conventions](https://arize-ai.github.io/openinference/spec/semantic_conventions.html)
+- Project: [Arize AI: OpenInference](https://github.com/Arize-ai/openinference)
+- Configuration: [OpenInference: Configuration](https://arize-ai.github.io/openinference/spec/configuration.html)
 
 ---
 
@@ -236,11 +250,11 @@ By mid-2025, over 600 websites had adopted the standard, including Anthropic, St
 
 - Spec: [llmstxt.org](https://llmstxt.org)
 - Directory: [directory.llmstxt.cloud](https://directory.llmstxt.cloud)
-- Guide: [gitbook.com — What is llms.txt](https://www.gitbook.com/blog/what-is-llms-txt)
+- Guide: [gitbook.com: What is llms.txt](https://www.gitbook.com/blog/what-is-llms-txt)
 
 ### pricing.md
 
-A machine-readable pricing file served at `yourdomain.com/pricing.md`. The convention emerged from a practical problem: AI agents were getting confused by JS-rendered pricing pages with interactive sliders. Publishing a static Markdown version at a predictable URL — with content negotiation support (`Accept: text/markdown`) — gives agents a reliable way to parse plans, tiers, and overage rates without scraping.
+A machine-readable pricing file served at `yourdomain.com/pricing.md`. AI agents often fail to parse JavaScript-rendered pricing pages with interactive sliders. A static Markdown file at a predictable URL, optionally served through content negotiation with `Accept: text/markdown`, lets agents read plans, tiers, and overage rates without scraping the rendered page.
 
 Popularized in 2025 by Resend, Auth0, and WorkOS, with the pattern spreading across developer-focused SaaS companies.
 
@@ -254,7 +268,7 @@ A markdown file served from `yourdomain.com/auth.md` that tells AI agents how to
 
 WorkOS documents the convention for agentic registration flows. A typical file walks agents through discovery, method selection, registration shapes, OTP claim ceremony, credential usage, errors, and revocation behavior.
 
-- Docs: [WorkOS — The auth.md file](https://workos.com/auth-md/docs/auth-md)
+- Docs: [WorkOS: The auth.md file](https://workos.com/auth-md/docs/auth-md)
 - Example: [workos/auth.md AUTH.md](https://github.com/workos/auth.md/blob/main/AUTH.md)
 
 ### ai-plugin.json
@@ -273,23 +287,23 @@ OpenAI introduced the convention for ChatGPT plugins. Plugins have since been su
 
 ### Model Context Protocol (MCP)
 
-An open protocol for connecting AI models to external tools, APIs, and data sources. Described as "USB-C for AI models." Created by Anthropic and donated to the Agentic AI Foundation (Linux Foundation) in December 2025, alongside AGENTS.md and Goose.
+An open protocol for connecting AI models to external tools, APIs, and data sources. Anthropic created MCP and donated it to the Agentic AI Foundation, part of the Linux Foundation, in December 2025 alongside AGENTS.md and Goose.
 
 MCP defines a standard interface between an LLM host (Claude, Cursor, VS Code, etc.) and MCP servers that expose tools, resources, and prompts. The protocol replaced dozens of fragmented tool-calling integrations across the industry.
 
 - Spec: [modelcontextprotocol.io](https://modelcontextprotocol.io)
-- Docs: [platform.claude.com — MCP](https://platform.claude.com/docs/en/build-with-claude/mcp)
+- Docs: [platform.claude.com: MCP](https://platform.claude.com/docs/en/build-with-claude/mcp)
 - Servers list: [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
 
 ### Agent2Agent Protocol (A2A)
 
 Agent2Agent Protocol is an open protocol for communication between independent agentic applications. It defines discovery through Agent Cards, task lifecycle management, messages, artifacts, streaming, and extension negotiation without requiring agents to expose their internal memory or tools.
 
-A2A is hosted by the Linux Foundation and has implementations across multiple cloud and agent ecosystems. It complements MCP: MCP connects a model host or agent to tools and data, while A2A coordinates work between agents.
+A2A is hosted by the Linux Foundation and has implementations across multiple cloud and agent ecosystems. MCP connects a model host or agent to tools and data. A2A coordinates work between independent agents.
 
 - Spec: [A2A Protocol specification](https://a2a-protocol.org/latest/specification/)
 - Project: [A2A Protocol](https://a2a-protocol.org/latest/)
-- Governance: [Linux Foundation — Agent2Agent project](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents)
+- Governance: [Linux Foundation: Agent2Agent project](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents)
 
 ### Agent Client Protocol (ACP)
 
@@ -298,14 +312,14 @@ Agent Client Protocol is an open JSON-RPC protocol between coding agents and edi
 ACP occupies a different boundary from MCP and A2A: ACP connects a client to a coding agent, MCP connects an agent to tools and data, and A2A connects independent agents. Zed and JetBrains jointly develop the protocol, with implementations for multiple editors and agents.
 
 - Spec: [Agent Client Protocol](https://agentclientprotocol.com/protocol/overview)
-- Project: [Zed — Agent Client Protocol](https://zed.dev/acp)
-- Adoption: [JetBrains — Agent Client Protocol](https://www.jetbrains.com/acp/)
+- Project: [Zed: Agent Client Protocol](https://zed.dev/acp)
+- Adoption: [JetBrains: Agent Client Protocol](https://www.jetbrains.com/acp/)
 
 ---
 
 ## Examples
 
-Minimal example files for every convention in this list live in [examples/](/docs/examples). Each folder uses a stable slug and contains the file path a project would normally place in its own repository or service.
+Minimal example files for every convention in this list live in [examples/](/docs/examples). Each folder uses a stable slug and contains the file path a project would normally place in its own repository or service. To refresh the generated docs, run `npm run generate` from `docs/`.
 
 ---
 
@@ -317,6 +331,6 @@ To add a convention:
 
 1. It must be **adopted by more than one team or tool** in production
 2. It must have a **public spec, docs, or canonical reference**
-3. It must be a **file-based convention or open protocol** — not a framework or tool
+3. It must describe a **file-based convention or open protocol**
 
 Open a PR with the convention name, a brief description in plain language, and links to the spec and at least one real-world reference.

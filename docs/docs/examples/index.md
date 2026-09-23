@@ -23,6 +23,7 @@ Every page below is generated from the repository's `examples/**` files. Edit th
 - [`claude-md/CLAUDE.md`](/docs/examples/generated/claude-md/CLAUDE)
 - [`design-md/DESIGN.md`](/docs/examples/generated/design-md/DESIGN)
 - [`eval-yaml/EVAL.yaml`](/docs/examples/generated/eval-yaml/EVAL)
+- [`gemini-md/GEMINI.md`](/docs/examples/generated/gemini-md/GEMINI)
 - [`llms-txt/llms-full.txt`](/docs/examples/generated/llms-txt/llms-full)
 - [`llms-txt/llms.txt`](/docs/examples/generated/llms-txt/llms)
 - [`memory-bank/.roo/activeContext.md`](/docs/examples/generated/memory-bank/roo/activeContext)

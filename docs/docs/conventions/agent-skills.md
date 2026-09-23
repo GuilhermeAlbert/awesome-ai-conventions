@@ -20,11 +20,11 @@ Each entry in this family should make the following points clear:
 
 ## Registry Entries
 
-Skills are modular, on-demand capability files. Instead of loading all context upfront, an agent reads a skill file only when the task matches its description. The format has converged into an open standard.
+Skills are modular, on-demand capability files. An agent reads the relevant skill only when a task matches its description, which keeps unrelated instructions out of the context window. The format has converged into an open standard.
 
 ### SKILL.md
 
-A markdown file with a YAML frontmatter header (`name`, `description`, `tools`, triggers) and a structured body with workflows, checklists, and output templates. The agent reads it from the filesystem on demand — it never enters the context window unless triggered.
+A Markdown file with a YAML frontmatter header (`name`, `description`, `tools`, triggers) and a body containing workflows, checklists, and output templates. The agent reads the file only when the task triggers it.
 
 Published by Anthropic as an open standard in December 2025. OpenAI adopted the same format for Codex CLI and ChatGPT in the same period. GitHub Copilot followed in December 2025, reading skills from `.github/skills/`.
 
@@ -34,13 +34,13 @@ Standard install locations:
 | -------------- | ------------------- | ----------------- |
 | Claude Code    | `~/.claude/skills/` | `.claude/skills/` |
 | Codex CLI      | `~/.codex/skills/`  | `.codex/skills/`  |
-| GitHub Copilot | —                   | `.github/skills/` |
+| GitHub Copilot | Not supported       | `.github/skills/` |
 
 For teams using multiple agents, the symlink pattern keeps a canonical `.skills/` directory and links each agent to it.
 
 - Spec: [agentskills.io](https://agentskills.io)
-- Docs: [platform.claude.com — Agent Skills overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
-- Docs: [platform.claude.com — Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
+- Docs: [platform.claude.com: Agent Skills overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+- Docs: [platform.claude.com: Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
 - Community repos: [skillmatic-ai/awesome-agent-skills](https://github.com/skillmatic-ai/awesome-agent-skills), [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)
 
 ### skills.sh

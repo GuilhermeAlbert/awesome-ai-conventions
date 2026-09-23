@@ -9,6 +9,7 @@ const sidebars: SidebarsConfig = {
     'decision_guide',
     'methodology',
     'status_taxonomy',
+    'emerging_patterns',
     'maintainers',
     {
       type: 'category',

@@ -6,7 +6,7 @@
 
 Awesome AI Conventions tracks file-based conventions, predictable public paths, manifests, and open protocols that help humans, codebases, AI agents, and model clients communicate with less ambiguity.
 
-The registry does not list frameworks, SaaS products, private templates, or libraries by themselves. Entries should have public documentation, a canonical repository, a spec, or clear production usage.
+The registry covers conventions with public documentation, a canonical repository, a specification, or clear production use. Frameworks, SaaS products, private templates, and standalone libraries fall outside that scope.
 
 ## Documentation Map
 
@@ -45,6 +45,12 @@ URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/methodology
 Accepted, candidate, watchlist, legacy, and deprecated maturity labels.
 
 URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/status_taxonomy
+
+### Emerging Patterns
+
+Public conventions that still need adoption or specification evidence.
+
+URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/emerging_patterns
 
 ### For Maintainers
 

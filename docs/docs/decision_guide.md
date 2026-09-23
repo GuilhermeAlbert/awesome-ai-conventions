@@ -13,6 +13,8 @@ Start with the problem the project has, not with the newest convention name. A r
 
 Use `AGENTS.md` when an AI coding agent needs project-specific operating instructions.
 
+Choose `AGENTS.md` as the cross-tool default. Use `CLAUDE.md` or `GEMINI.md` when a project needs behavior tied to Claude Code or Gemini CLI. Claude Code can use `AGENTS.md` as a fallback when `CLAUDE.md` is absent, while Gemini CLI can include `AGENTS.md` through its configurable context filenames.
+
 Good fit:
 
 - Build, test, and lint commands.

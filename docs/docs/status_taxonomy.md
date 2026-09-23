@@ -7,7 +7,7 @@ sidebar_position: 6
 
 > Provides a shared vocabulary for deciding how mature each convention is.
 
-Not every useful pattern should be presented as equally mature. The registry can stay useful by separating established conventions from candidates and legacy artifacts.
+Useful patterns mature at different rates. The registry separates established conventions from candidates and legacy artifacts.
 
 ## Accepted
 
@@ -68,4 +68,3 @@ Signals:
 - Known risk for new adopters.
 
 Deprecated items should not be promoted as default choices.
-

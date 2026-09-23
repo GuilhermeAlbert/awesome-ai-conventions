@@ -108,9 +108,10 @@ The source of truth remains the repository root \`README.md\`. The Docusaurus si
 
 - Read the full registry in [README Mirror](./readme.md).
 - Browse the conceptual map in [Layers](./layers.md).
-- Read [Harness Engineering](./harness-engineering.md) to see how the conventions compose around an agent run.
+- Read [Harness Engineering](./harness-engineering.md) to see how the conventions work together during an agent run.
 - Use the [Decision Guide](./decision_guide.md) to choose a convention for a specific project need.
 - Review the [Methodology](./methodology.md) and [Status Taxonomy](./status_taxonomy.md) before proposing new entries.
+- Check [Emerging Patterns](./emerging_patterns.md) for candidates that still need adoption or specification evidence.
 - Explore copyable files in [Examples](./examples/index.md).
 `,
   },
@@ -126,7 +127,7 @@ AI conventions are easier to reason about when grouped by the role they play in 
 
 | Need | Start with | Why |
 | --- | --- | --- |
-| Tell coding agents how to work in a repository | \`AGENTS.md\` | Cross-tool project instructions are the highest-leverage baseline. |
+| Tell coding agents how to work in a repository | \`AGENTS.md\` | Cross-tool project instructions are the most useful baseline. |
 | Preserve long-lived project context | \`MEMORY.md\` or Memory Bank | These files keep stable knowledge and task state outside a single chat. |
 | Package a reusable agent capability | \`SKILL.md\` | Skills are loaded on demand when a task matches the description. |
 | Store prompts as versioned assets | \`.prompty\`, \`.prompt\`, or \`system_prompt.txt\` | Prompt files keep model instructions inspectable and reviewable. |
@@ -144,6 +145,7 @@ These files tell agents how to behave in a repository.
 
 - \`AGENTS.md\`
 - \`CLAUDE.md\`
+- \`GEMINI.md\`
 - Tool-specific rules such as Cursor rules, Cline rules, and Copilot instructions
 - \`.aiignore\`
 
@@ -202,6 +204,54 @@ These standards define interoperability across different harness boundaries.
 - Model Context Protocol for agents, tools, and data
 - Agent2Agent Protocol for independent agents
 - Agent Client Protocol for coding agents and editor clients
+`,
+  },
+  {
+    file: 'emerging_patterns.md',
+    title: 'Emerging Patterns',
+    position: 7,
+    body: `# Emerging Patterns
+
+This page tracks public conventions that have useful implementations but do not yet meet the registry's bar for the main README. Each entry names the missing evidence so maintainers know what to review next.
+
+## REVIEW.md
+
+**Status:** Watchlist
+
+**Review after:** 2027-03-01
+
+\`REVIEW.md\` provides repository-specific instructions for AI code review. GitHub Copilot code review reads it alongside other repository instruction files. Anthropic's Claude Code changelog also refers to \`REVIEW.md\` instructions in its Code Review service.
+
+The file has support from two review products, but its scope, precedence, and expected structure are not defined by an independent specification. Keep it on the watchlist until more tools document compatible behavior.
+
+- Docs: [GitHub Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review)
+- Adoption: [Claude Code changelog](https://code.claude.com/docs/en/changelog)
+
+## Project MCP configuration
+
+**Status:** Candidate
+
+**Review after:** 2027-03-01
+
+Project-level MCP configuration lets a repository declare the MCP servers available to its contributors and agents. Claude Code uses \`.mcp.json\` at the repository root. Cursor uses \`.cursor/mcp.json\`. Both formats define servers under an \`mcpServers\` object, but their paths and supported fields can differ.
+
+The shared filename and object shape show convergence. Because the paths differ, repositories still need client-specific files. Verify each file with the target client.
+
+- Docs: [Claude Code MCP configuration](https://code.claude.com/docs/en/mcp)
+- Docs: [Cursor MCP configuration](https://docs.cursor.com/context/model-context-protocol)
+
+## \`.github/prompts/*.prompt.md\`
+
+**Status:** Candidate
+
+**Review after:** 2027-03-01
+
+GitHub Copilot prompt files store reusable prompts with optional inputs and tool declarations under \`.github/prompts/\`. The format is available across several Copilot surfaces, but GitHub still marks prompt files as public preview.
+
+The repository already tracks \`.prompt\` and \`system_prompt.txt\` as broader prompt asset patterns. Keep Copilot's path-specific format as a candidate until the format stabilizes or another tool adopts it.
+
+- Docs: [GitHub Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
+- Status: [GitHub Copilot response customization](https://docs.github.com/en/copilot/concepts/prompting/response-customization)
 `,
   },
   {
@@ -482,6 +532,11 @@ const llmPages = [
     'Status Taxonomy',
     'Accepted, candidate, watchlist, legacy, and deprecated maturity labels.',
   ],
+  [
+    'emerging_patterns',
+    'Emerging Patterns',
+    'Public conventions that still need adoption or specification evidence.',
+  ],
   ['maintainers', 'For Maintainers', 'Practical guidance for maintaining an agent-ready registry.'],
   [
     'conventions/project-context-files',
@@ -522,8 +577,8 @@ const llmPages = [
 export function renderLlmsDocuments() {
   const pageLine = ([id, title, description]) =>
     `- [${title}](${siteDocsUrl}/${id}): ${description}`;
-  const startHere = llmPages.slice(0, 7).map(pageLine).join('\n');
-  const families = llmPages.slice(7, 16).map(pageLine).join('\n');
+  const startHere = llmPages.slice(0, 8).map(pageLine).join('\n');
+  const families = llmPages.slice(8, 17).map(pageLine).join('\n');
   const fullMap = llmPages
     .map(
       ([id, title, description]) =>
@@ -555,7 +610,7 @@ ${families}
 
 Awesome AI Conventions tracks file-based conventions, predictable public paths, manifests, and open protocols that help humans, codebases, AI agents, and model clients communicate with less ambiguity.
 
-The registry does not list frameworks, SaaS products, private templates, or libraries by themselves. Entries should have public documentation, a canonical repository, a spec, or clear production usage.
+The registry covers conventions with public documentation, a canonical repository, a specification, or clear production use. Frameworks, SaaS products, private templates, and standalone libraries fall outside that scope.
 
 ## Documentation Map
 
