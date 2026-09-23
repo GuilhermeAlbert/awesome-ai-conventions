@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Layers
 
-AI conventions are easier to reason about when grouped by the role they play in an agent workflow. Use this map to decide which artifact belongs in a repository, docs site, or integration surface.
+Agent standards and conventions are easier to compare when grouped by the role they play in an agent workflow. Use this map to decide which artifact belongs in a repository, docs site, or integration surface.
 
 ## Quick Decision Map
 

@@ -15,4 +15,4 @@ Architecture files help agents understand system boundaries before modifying cod
 
 ## Candidate Patterns
 
-Generic files such as `ARCHITECTURE.md`, `DECISIONS.md`, and ADR folders are valuable for human engineering teams, but this registry only lists them as AI conventions when there is clear evidence of agent-specific standardization.
+Generic files such as `ARCHITECTURE.md`, `DECISIONS.md`, and ADR folders are valuable for human engineering teams, but this registry only lists them as agent standards or conventions when there is clear evidence of agent-specific standardization.

@@ -3,16 +3,17 @@ title: "README Mirror"
 sidebar_position: 2
 ---
 
-# Awesome AI Conventions [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Agent Standards [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of conventions, file standards, and protocols for building with AI agents.
+> A curated index of standards, protocols, conventions, and emerging patterns for AI agents.
 
-This registry tracks **file-based conventions and open protocols** used by humans, codebases, and AI agents to exchange context and coordinate work.
+This registry tracks the files, formats, and protocols that agents use to read project context, share capabilities, coordinate work, and interact with tools.
 
 ---
 
 ## Contents
 
+- [Classification](#classification)
 - [Project-level context files](#project-level-context-files)
   - [AGENTS.md](#agentsmd)
   - [CLAUDE.md](#claudemd)
@@ -46,6 +47,21 @@ This registry tracks **file-based conventions and open protocols** used by human
   - [Agent2Agent Protocol (A2A)](#agent2agent-protocol-a2a)
   - [Agent Client Protocol (ACP)](#agent-client-protocol-acp)
 - [Examples](#examples)
+
+---
+
+## Classification
+
+Each entry has a kind and a maturity status.
+
+| Kind | Meaning |
+| --- | --- |
+| Standard | A published specification with defined structure or behavior. |
+| Protocol | A specification for communication or interoperability. |
+| Convention | An adopted practice without a formal standards process. |
+| Emerging | A recent proposal or pattern whose adoption is still developing. |
+
+The documentation tracks maturity separately as accepted, candidate, watchlist, legacy, or deprecated. Inclusion records evidence and adoption. It is not an endorsement.
 
 ---
 

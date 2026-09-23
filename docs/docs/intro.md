@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Introduction
 
-Awesome AI Conventions is a curated registry of file-based conventions and open protocols for AI-agent-ready projects.
+Awesome Agent Standards is a curated index of standards, protocols, conventions, and emerging patterns for AI agents.
 
 The source of truth remains the repository root `README.md`. The Docusaurus site mirrors that registry into focused pages, explains how conventions are evaluated, and generates browsable pages for every file under `examples/**`.
 

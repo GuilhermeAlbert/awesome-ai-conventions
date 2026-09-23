@@ -1,10 +1,10 @@
-# Awesome AI Conventions Full Docs Snapshot
+# Awesome Agent Standards Full Docs Snapshot
 
 > A compact Markdown map of the documentation for LLM retrieval.
 
 ## Project Scope
 
-Awesome AI Conventions tracks file-based conventions, predictable public paths, manifests, and open protocols that help humans, codebases, AI agents, and model clients communicate with less ambiguity.
+Awesome Agent Standards tracks standards, protocols, conventions, and emerging patterns that help AI agents work across repositories, tools, clients, and services.
 
 The registry covers conventions with public documentation, a canonical repository, a specification, or clear production use. Frameworks, SaaS products, private templates, and standalone libraries fall outside that scope.
 
@@ -14,106 +14,106 @@ The registry covers conventions with public documentation, a canonical repositor
 
 Project scope and entry points.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/intro
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/intro
 
 ### Harness Engineering
 
 How context, tools, control loops, safety, evaluation, and observability compose around an agent run.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/harness-engineering
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/harness-engineering
 
 ### Layers
 
 Conceptual map of instruction, context, execution, evaluation, observability, discoverability, and interoperability layers.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/layers
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/layers
 
 ### Decision Guide
 
 How to choose the smallest convention for a project need.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/decision_guide
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/decision_guide
 
 ### Methodology
 
 Inclusion criteria, evidence levels, updates, and removals.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/methodology
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/methodology
 
 ### Status Taxonomy
 
 Accepted, candidate, watchlist, legacy, and deprecated maturity labels.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/status_taxonomy
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/status_taxonomy
 
 ### Emerging Patterns
 
 Public conventions that still need adoption or specification evidence.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/emerging_patterns
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/emerging_patterns
 
 ### For Maintainers
 
 Practical guidance for maintaining an agent-ready registry.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/maintainers
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/maintainers
 
 ### Project Context Files
 
 Repository-root files that teach coding agents how to work inside a project.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/project-context-files
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/conventions/project-context-files
 
 ### Runtime and Guardrails
 
 Files and policies for scope, staged work, and safe execution.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/runtime-guardrails
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/conventions/runtime-guardrails
 
 ### Prompt Assets
 
 Versioned prompt files and formats.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/prompt-assets
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/conventions/prompt-assets
 
 ### Agent Skills
 
 On-demand capability files and skill registries.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/agent-skills
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/conventions/agent-skills
 
 ### Design and UI
 
 Machine-readable design guidance for interface-generating agents.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/design-ui
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/conventions/design-ui
 
 ### Evaluation and Testing
 
 Version-controlled evaluation files for agent behavior.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/evaluation-testing
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/conventions/evaluation-testing
 
 ### Observability and Tracing
 
 Semantic conventions for model, agent, tool, guardrail, and evaluation telemetry.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/observability-tracing
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/conventions/observability-tracing
 
 ### Web and LLM Discoverability
 
 Predictable public files and URLs for model clients.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/discoverability
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/conventions/discoverability
 
 ### Protocols
 
 MCP, A2A, and ACP interoperability boundaries.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/conventions/protocols
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/conventions/protocols
 
 ### Examples
 
 Generated pages for copyable convention files.
 
-URL: https://guilhermealbert.github.io/awesome-ai-conventions/docs/examples
+URL: https://guilhermealbert.github.io/awesome-agent-standards/docs/examples
