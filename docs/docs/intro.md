@@ -25,7 +25,8 @@ The source of truth remains the repository root `README.md`. The Docusaurus site
 
 - Read the full registry in [README Mirror](./readme.md).
 - Browse the conceptual map in [Layers](./layers.md).
-- Read [Harness Engineering](./harness-engineering.md) to see how the conventions compose around an agent run.
+- Read [Harness Engineering](./harness-engineering.md) to see how the conventions work together during an agent run.
 - Use the [Decision Guide](./decision_guide.md) to choose a convention for a specific project need.
 - Review the [Methodology](./methodology.md) and [Status Taxonomy](./status_taxonomy.md) before proposing new entries.
+- Check [Emerging Patterns](./emerging_patterns.md) for candidates that still need adoption or specification evidence.
 - Explore copyable files in [Examples](./examples/index.md).

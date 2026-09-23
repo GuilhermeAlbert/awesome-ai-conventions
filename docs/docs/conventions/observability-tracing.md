@@ -28,7 +28,7 @@ The OpenTelemetry GenAI Semantic Conventions define common telemetry for generat
 
 The GenAI conventions are currently marked as development. Implementations should pin the emitted convention version and expect changes before the specification reaches stable status. Prompt content, responses, tool arguments, and tool results may contain sensitive data and should not be captured by default without an explicit privacy policy.
 
-- Spec: [OpenTelemetry — Semantic conventions for generative AI systems](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md)
+- Spec: [OpenTelemetry: Semantic conventions for generative AI systems](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md)
 - Project: [OpenTelemetry GenAI Semantic Conventions](https://github.com/open-telemetry/semantic-conventions-genai)
 
 ### OpenInference Semantic Conventions
@@ -37,8 +37,8 @@ OpenInference defines OpenTelemetry-compatible attributes and span kinds for AI 
 
 OpenInference traces can be exported to OpenTelemetry-compatible backends. Its content-capture controls can hide inputs, outputs, invocation parameters, and tool definitions when telemetry would otherwise expose sensitive or oversized payloads.
 
-- Spec: [OpenInference — Semantic Conventions](https://arize-ai.github.io/openinference/spec/semantic_conventions.html)
-- Project: [Arize AI — OpenInference](https://github.com/Arize-ai/openinference)
-- Configuration: [OpenInference — Configuration](https://arize-ai.github.io/openinference/spec/configuration.html)
+- Spec: [OpenInference: Semantic Conventions](https://arize-ai.github.io/openinference/spec/semantic_conventions.html)
+- Project: [Arize AI: OpenInference](https://github.com/Arize-ai/openinference)
+- Configuration: [OpenInference: Configuration](https://arize-ai.github.io/openinference/spec/configuration.html)
 
 ---

@@ -6,7 +6,7 @@ Start for free and scale as you grow. All plans include the core API, webhooks, 
 
 | Plan       | Price      | Included units | Overage (per 1,000) |
 | ---------- | ---------- | -------------- | ------------------- |
-| Free       | $0/mo      | 3,000          | —                   |
+| Free       | $0/mo      | 3,000          | Not available       |
 | Pro        | $20/mo     | 50,000         | $0.90               |
 | Scale      | $90/mo     | 100,000        | $0.80               |
 | Enterprise | Custom     | Custom         | Custom              |
@@ -18,10 +18,10 @@ The overage rate applies only to units sent beyond the included volume.
 | Feature                 | Free | Pro | Scale | Enterprise |
 | ----------------------- | ---- | --- | ----- | ---------- |
 | API access              | ✓    | ✓   | ✓     | ✓          |
-| Custom domain           | —    | ✓   | ✓     | ✓          |
-| Priority support        | —    | —   | ✓     | ✓          |
-| SLA guarantee           | —    | —   | —     | ✓          |
-| Dedicated infrastructure| —    | —   | —     | ✓          |
+| Custom domain           | No   | ✓   | ✓     | ✓          |
+| Priority support        | No   | No  | ✓     | ✓          |
+| SLA guarantee           | No   | No  | No    | ✓          |
+| Dedicated infrastructure| No  | No  | No    | ✓          |
 
 ## Enterprise
 

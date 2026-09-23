@@ -10,6 +10,7 @@
 - [Decision Guide](https://guilhermealbert.github.io/awesome-ai-conventions/docs/decision_guide): How to choose the smallest convention for a project need.
 - [Methodology](https://guilhermealbert.github.io/awesome-ai-conventions/docs/methodology): Inclusion criteria, evidence levels, updates, and removals.
 - [Status Taxonomy](https://guilhermealbert.github.io/awesome-ai-conventions/docs/status_taxonomy): Accepted, candidate, watchlist, legacy, and deprecated maturity labels.
+- [Emerging Patterns](https://guilhermealbert.github.io/awesome-ai-conventions/docs/emerging_patterns): Public conventions that still need adoption or specification evidence.
 - [For Maintainers](https://guilhermealbert.github.io/awesome-ai-conventions/docs/maintainers): Practical guidance for maintaining an agent-ready registry.
 
 ## Core Convention Families

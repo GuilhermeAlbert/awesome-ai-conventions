@@ -28,11 +28,11 @@ By mid-2025, over 600 websites had adopted the standard, including Anthropic, St
 
 - Spec: [llmstxt.org](https://llmstxt.org)
 - Directory: [directory.llmstxt.cloud](https://directory.llmstxt.cloud)
-- Guide: [gitbook.com — What is llms.txt](https://www.gitbook.com/blog/what-is-llms-txt)
+- Guide: [gitbook.com: What is llms.txt](https://www.gitbook.com/blog/what-is-llms-txt)
 
 ### pricing.md
 
-A machine-readable pricing file served at `yourdomain.com/pricing.md`. The convention emerged from a practical problem: AI agents were getting confused by JS-rendered pricing pages with interactive sliders. Publishing a static Markdown version at a predictable URL — with content negotiation support (`Accept: text/markdown`) — gives agents a reliable way to parse plans, tiers, and overage rates without scraping.
+A machine-readable pricing file served at `yourdomain.com/pricing.md`. AI agents often fail to parse JavaScript-rendered pricing pages with interactive sliders. A static Markdown file at a predictable URL, optionally served through content negotiation with `Accept: text/markdown`, lets agents read plans, tiers, and overage rates without scraping the rendered page.
 
 Popularized in 2025 by Resend, Auth0, and WorkOS, with the pattern spreading across developer-focused SaaS companies.
 
@@ -46,7 +46,7 @@ A markdown file served from `yourdomain.com/auth.md` that tells AI agents how to
 
 WorkOS documents the convention for agentic registration flows. A typical file walks agents through discovery, method selection, registration shapes, OTP claim ceremony, credential usage, errors, and revocation behavior.
 
-- Docs: [WorkOS — The auth.md file](https://workos.com/auth-md/docs/auth-md)
+- Docs: [WorkOS: The auth.md file](https://workos.com/auth-md/docs/auth-md)
 - Example: [workos/auth.md AUTH.md](https://github.com/workos/auth.md/blob/main/AUTH.md)
 
 ### ai-plugin.json

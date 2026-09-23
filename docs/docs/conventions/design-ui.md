@@ -26,8 +26,8 @@ A markdown file placed in the project root that defines a project's visual desig
 
 Google Stitch documents DESIGN.md as the design counterpart to AGENTS.md: a plain-text artifact that agents can read, edit, and apply when generating consistent screens. The format allows unknown sections and custom tokens, so teams can extend it for domain-specific design rules.
 
-- Spec: [Stitch — DESIGN.md specification](https://stitch.withgoogle.com/docs/design-md/specification)
-- Docs: [Stitch — What is DESIGN.md?](https://stitch.withgoogle.com/docs/design-md/overview)
+- Spec: [Stitch: DESIGN.md specification](https://stitch.withgoogle.com/docs/design-md/specification)
+- Docs: [Stitch: What is DESIGN.md?](https://stitch.withgoogle.com/docs/design-md/overview)
 - Repo: [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
 - Directory: [getdesign.md](https://getdesign.md)
 

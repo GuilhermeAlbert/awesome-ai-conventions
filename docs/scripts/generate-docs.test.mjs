@@ -3,10 +3,14 @@ import test from 'node:test';
 
 import {renderLlmsDocuments} from './generate-docs.mjs';
 
-test('renders harness and observability routes in both LLM discovery files', () => {
+test('renders core and emerging routes in both LLM discovery files', () => {
   const {concise, full} = renderLlmsDocuments();
 
-  for (const route of ['harness-engineering', 'conventions/observability-tracing']) {
+  for (const route of [
+    'harness-engineering',
+    'emerging_patterns',
+    'conventions/observability-tracing',
+  ]) {
     assert.match(concise, new RegExp(route));
     assert.match(full, new RegExp(route));
   }
