@@ -90,7 +90,7 @@ const manualPages = [
     position: 1,
     body: `# Introduction
 
-Awesome AI Conventions is a curated registry of file-based conventions and open protocols for AI-agent-ready projects.
+Awesome Agent Standards is a curated index of standards, protocols, conventions, and emerging patterns for AI agents.
 
 The source of truth remains the repository root \`README.md\`. The Docusaurus site mirrors that registry into focused pages, explains how conventions are evaluated, and generates browsable pages for every file under \`examples/**\`.
 
@@ -123,7 +123,7 @@ The source of truth remains the repository root \`README.md\`. The Docusaurus si
     position: 3,
     body: `# Layers
 
-AI conventions are easier to reason about when grouped by the role they play in an agent workflow. Use this map to decide which artifact belongs in a repository, docs site, or integration surface.
+Agent standards and conventions are easier to compare when grouped by the role they play in an agent workflow. Use this map to decide which artifact belongs in a repository, docs site, or integration surface.
 
 ## Quick Decision Map
 
@@ -291,7 +291,7 @@ Architecture files help agents understand system boundaries before modifying cod
 
 ## Candidate Patterns
 
-Generic files such as \`ARCHITECTURE.md\`, \`DECISIONS.md\`, and ADR folders are valuable for human engineering teams, but this registry only lists them as AI conventions when there is clear evidence of agent-specific standardization.
+Generic files such as \`ARCHITECTURE.md\`, \`DECISIONS.md\`, and ADR folders are valuable for human engineering teams, but this registry only lists them as agent standards or conventions when there is clear evidence of agent-specific standardization.
 `,
   },
 ];

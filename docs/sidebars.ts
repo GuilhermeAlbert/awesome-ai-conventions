@@ -13,7 +13,7 @@ const sidebars: SidebarsConfig = {
     'maintainers',
     {
       type: 'category',
-      label: 'Conventions',
+      label: 'Registry',
       collapsed: false,
       items: [
         'conventions/project-context-files',
