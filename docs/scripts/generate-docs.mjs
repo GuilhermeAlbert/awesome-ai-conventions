@@ -12,7 +12,9 @@ const generatedExamplesDir = path.join(examplesDir, 'generated');
 const rootReadmePath = path.join(repoRoot, 'README.md');
 const repoExamplesDir = path.join(repoRoot, 'examples');
 const staticDir = path.join(docsRoot, 'static');
-const siteDocsUrl = 'https://guilhermealbert.github.io/awesome-ai-conventions/docs';
+const siteRootUrl = 'https://guilhermealbert.github.io/awesome-agent-standards';
+const siteDocsUrl = `${siteRootUrl}/docs`;
+const repositoryUrl = 'https://github.com/guilhermealbert/awesome-agent-standards';
 
 const sectionPages = [
   {
@@ -323,8 +325,8 @@ function frontMatter(title, position) {
 function rewriteReadmeLinks(markdown) {
   return markdown
     .replace(/\]\(examples\/README\.md\)/g, '](/docs/examples)')
-    .replace(/\]\(LICENSE\)/g, '](https://github.com/guilhermealbert/awesome-ai-conventions/blob/main/LICENSE)')
-    .replace(/\]\(CONTRIBUTING\.md\)/g, '](https://github.com/guilhermealbert/awesome-ai-conventions/blob/main/CONTRIBUTING.md)');
+    .replace(/\]\(LICENSE\)/g, `](${repositoryUrl}/blob/main/LICENSE)`)
+    .replace(/\]\(CONTRIBUTING\.md\)/g, `](${repositoryUrl}/blob/main/CONTRIBUTING.md)`);
 }
 
 function extractSection(markdown, heading) {
@@ -586,9 +588,9 @@ export function renderLlmsDocuments() {
     )
     .join('\n\n');
 
-  const concise = `# Awesome AI Conventions
+  const concise = `# Awesome Agent Standards
 
-> A curated registry of file-based conventions and open protocols for AI-agent-ready projects.
+> A curated index of standards, protocols, conventions, and emerging patterns for AI agents.
 
 ## Start Here
 
@@ -600,15 +602,15 @@ ${families}
 
 ## Full Snapshot
 
-- [llms-full.txt](https://guilhermealbert.github.io/awesome-ai-conventions/llms-full.txt): Compact Markdown snapshot of the main docs.
+- [llms-full.txt](${siteRootUrl}/llms-full.txt): Compact Markdown snapshot of the main docs.
 `;
-  const full = `# Awesome AI Conventions Full Docs Snapshot
+  const full = `# Awesome Agent Standards Full Docs Snapshot
 
 > A compact Markdown map of the documentation for LLM retrieval.
 
 ## Project Scope
 
-Awesome AI Conventions tracks file-based conventions, predictable public paths, manifests, and open protocols that help humans, codebases, AI agents, and model clients communicate with less ambiguity.
+Awesome Agent Standards tracks standards, protocols, conventions, and emerging patterns that help AI agents work across repositories, tools, clients, and services.
 
 The registry covers conventions with public documentation, a canonical repository, a specification, or clear production use. Frameworks, SaaS products, private templates, and standalone libraries fall outside that scope.
 

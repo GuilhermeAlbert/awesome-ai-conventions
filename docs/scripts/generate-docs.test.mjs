@@ -24,3 +24,14 @@ test('renders each LLM discovery file with exactly one trailing newline', () => 
   assert.match(full, /[^\n]\n$/);
   assert.doesNotMatch(full, /\n\n$/);
 });
+
+test('renders the Awesome Agent Standards identity and canonical site URL', () => {
+  const {concise, full} = renderLlmsDocuments();
+
+  for (const document of [concise, full]) {
+    assert.match(document, /Awesome Agent Standards/);
+    assert.match(document, /https:\/\/guilhermealbert\.github\.io\/awesome-agent-standards\//);
+    assert.doesNotMatch(document, /Awesome AI Conventions/);
+    assert.doesNotMatch(document, /awesome-ai-conventions/);
+  }
+});
